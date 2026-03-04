@@ -3,301 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poutchou - Grigris porte-bonheur</title>
+  <title>Poutchou - Grigris de sac</title>
   <style>
-    /* Style général */
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
       color: #333;
     }
     header {
-      background: #f0f8ff; /* AliceBlue for a light, cheerful tone */
-      padding: 40px 20px;
       text-align: center;
+      padding: 2rem;
+      background-color: #f0f0f5;
     }
     header h1 {
-      margin: 0 0 10px;
-      font-size: 2em;
-      color: #3b7a57;
+      margin: 0;
+      font-size: 2.5rem;
+      color: #555;
     }
-    header p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.1em;
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
     }
-    section {
-      padding: 20px;
-    }
-    /* Section Produits */
-    #produits {
-      background: #ffffff;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 20px 0;
-    }
-    .product-card {
-      border: 1px solid #eee;
+    section.model {
+      background-color: #fff;
+      border: 1px solid #ddd;
       border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
       display: flex;
-      flex-direction: column;
-      background: #fff;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    .product-card img {
+    section.model img {
+      max-width: 150px;
       width: 100%;
       height: auto;
-      display: block;
+      margin-right: 1rem;
+      border-radius: 4px;
     }
-    .product-card-content {
-      padding: 15px;
+    section.model .details {
       flex: 1;
     }
-    .product-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.2em;
-      color: #4a4a4a;
+    section.model h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #444;
     }
-    .product-card p {
-      margin: 5px 0;
-      font-size: 0.95em;
+    section.model p {
+      margin: 0.5rem 0;
     }
-    .buy-buttons {
-      margin-top: 10px;
+    .buttons {
+      margin-top: 1rem;
     }
     .btn {
       display: inline-block;
-      margin-right: 10px;
-      padding: 8px 12px;
-      font-size: 0.95em;
-      text-decoration: none;
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      border: none;
       border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
     }
-    .btn-stripe {
-      background: #32325d;
-      color: #fff;
+    .btn.stripe {
+      background-color: #6772E5;
+      color: white;
     }
-    .btn-paypal {
-      background: #ffc439;
-      color: #333;
+    .btn.paypal {
+      background-color: #FFC439;
+      color: #154360;
     }
-    .btn:hover {
-      opacity: 0.9;
-    }
-    /* Section Symbolique */
-    #symbolique {
-      background: #f4f0ff; /* Lavender */
-    }
-    #symbolique h2 {
-      text-align: center;
-      color: #5a4a7b;
-    }
-    #symbolique ul {
-      list-style-type: none;
-      padding: 0;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    #symbolique li {
-      background: #fff;
-      margin: 10px;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-    }
-    #symbolique strong {
-      color: #5a4a7b;
-    }
-    /* Section Réassurance */
-    #reassurance {
-      background: #f0fff0; /* Honeydew */
-      text-align: center;
-    }
-    #reassurance h2 {
-      color: #4a7a57;
-    }
-    #reassurance ul {
-      list-style-type: none;
-      padding: 0;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    #reassurance li {
-      margin: 10px 0;
-      font-size: 1em;
-    }
-    /* Responsive */
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5em;
+      section.model {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      .products {
-        grid-template-columns: 1fr;
+      section.model img {
+        margin-bottom: 1rem;
+        margin-right: 0;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- Section d'introduction -->
-  <header id="intro">
-    <h1>Les Poutchou – Petits grigris porte-bonheur</h1>
-    <p>Les Poutchou sont de tendres grigris artisanaux, imaginés pour glisser un peu de magie, de douceur et de poésie dans votre quotidien. Choisissez votre modèle préféré parmi nos 8 éditions uniques.</p>
+  <header>
+    <h1>Poutchous – Grigris de sac artisanaux</h1>
   </header>
-
-  <!-- Section de présentation des produits -->
-  <section id="produits">
-    <h2 style="text-align:center;">Nos modèles de Poutchou</h2>
-    <div class="products">
-      <!-- Carte produit pour Toudou -->
-      <div class="product-card">
-        <!-- Remplacer l'image par le visuel du Poutchou Toudou -->
-        <img src="https://source.unsplash.com/featured/?cat" alt="Toudou – Chat (Quartz Rose)">
-        <div class="product-card-content">
-          <h3>Toudou</h3>
-          <p><strong>Animal :</strong> Chat</p>
-          <p><strong>Pierre :</strong> Quartz Rose</p>
-          <div class="buy-buttons">
-            <a href="#" class="btn btn-stripe">Acheter avec Stripe</a> <!-- Lien Stripe fictif -->
-            <a href="#" class="btn btn-paypal">Acheter avec PayPal</a> <!-- Lien PayPal fictif -->
-          </div>
+  <main>
+    <!-- Toudou -->
+    <section class="model">
+      <img src="assets/images/toudou.jpg" alt="Poutchou Toudou – Chat, Quartz rose">
+      <div class="details">
+        <h2>Poutchou Toudou</h2>
+        <p><strong>Animal :</strong> Chat<br><strong>Pierre :</strong> Quartz rose</p>
+        <div class="buttons">
+          <!-- Lien Stripe à modifier pour Toudou -->
+          <a href="https://buy.stripe.com/test_bouton_poutchou_toudou" class="btn stripe">Acheter (Stripe)</a>
+          <!-- Lien PayPal à modifier pour Toudou -->
+          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
         </div>
       </div>
-      <!-- Carte produit pour Abeillou -->
-      <div class="product-card">
-        <!-- Remplacer l'image par le visuel du Poutchou Abeillou -->
-        <img src="https://source.unsplash.com/featured/?bee" alt="Abeillou – Abeille (Pierre de lave)">
-        <div class="product-card-content">
-          <h3>Abeillou</h3>
-          <p><strong>Animal :</strong> Abeille</p>
-          <p><strong>Pierre :</strong> Pierre de lave</p>
-          <div class="buy-buttons">
-            <a href="#" class="btn btn-stripe">Acheter avec Stripe</a> <!-- Lien Stripe fictif -->
-            <a href="#" class="btn btn-paypal">Acheter avec PayPal</a> <!-- Lien PayPal fictif -->
-          </div>
+    </section>
+    <!-- Abeillou (placeholder) -->
+    <section class="model">
+      <img src="assets/images/abeillou.jpg" alt="Poutchou Abeillou – Abeille, (pierre non définie)">
+      <div class="details">
+        <h2>Poutchou Abeillou</h2>
+        <p><strong>Animal :</strong> Abeille<br><strong>Pierre :</strong> Citrine (exemple)</p>
+        <div class="buttons">
+          <!-- Lien Stripe à modifier pour Abeillou -->
+          <a href="https://buy.stripe.com/test_bouton_poutchou_abeillou" class="btn stripe">Acheter (Stripe)</a>
+          <!-- Lien PayPal à modifier pour Abeillou -->
+          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
         </div>
       </div>
-      <!-- Carte produit pour Luckyyou -->
-      <div class="product-card">
-        <!-- Remplacer l'image par le visuel du Poutchou Luckyyou -->
-        <img src="https://source.unsplash.com/featured/?frog" alt="Luckyyou – Grenouille (Aventurine Verte)">
-        <div class="product-card-content">
-          <h3>Luckyyou</h3>
-          <p><strong>Animal :</strong> Grenouille</p>
-          <p><strong>Pierre :</strong> Aventurine Verte</p>
-          <div class="buy-buttons">
-            <a href="#" class="btn btn-stripe">Acheter avec Stripe</a> <!-- Lien Stripe fictif -->
-            <a href="#" class="btn btn-paypal">Acheter avec PayPal</a> <!-- Lien PayPal fictif -->
-          </div>
+    </section>
+    <!-- Luckyyou -->
+    <section class="model">
+      <img src="assets/images/luckyyou.jpg" alt="Poutchou Luckyyou – Grenouille, Aventurine">
+      <div class="details">
+        <h2>Poutchou Luckyyou</h2>
+        <p><strong>Animal :</strong> Grenouille<br><strong>Pierre :</strong> Aventurine</p>
+        <div class="buttons">
+          <!-- Lien Stripe à modifier pour Luckyyou -->
+          <a href="https://buy.stripe.com/test_bouton_poutchou_luckyyou" class="btn stripe">Acheter (Stripe)</a>
+          <!-- Lien PayPal à modifier pour Luckyyou -->
+          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
         </div>
       </div>
-      <!-- Carte produit pour Courageou -->
-      <div class="product-card">
-        <!-- Remplacer l'image par le visuel du Poutchou Courageou -->
-        <img src="https://source.unsplash.com/featured/?tiger" alt="Courageou – Tigre (Cornaline)">
-        <div class="product-card-content">
-          <h3>Courageou</h3>
-          <p><strong>Animal :</strong> Tigre</p>
-          <p><strong>Pierre :</strong> Cornaline</p>
-          <div class="buy-buttons">
-            <a href="#" class="btn btn-stripe">Acheter avec Stripe</a> <!-- Lien Stripe fictif -->
-            <a href="#" class="btn btn-paypal">Acheter avec PayPal</a> <!-- Lien PayPal fictif -->
-          </div>
+    </section>
+    <!-- Courageou -->
+    <section class="model">
+      <img src="assets/images/courageou.jpg" alt="Poutchou Courageou – Tigre, Cornaline">
+      <div class="details">
+        <h2>Poutchou Courageou</h2>
+        <p><strong>Animal :</strong> Tigre<br><strong>Pierre :</strong> Cornaline</p>
+        <div class="buttons">
+          <!-- Lien Stripe à modifier pour Courageou -->
+          <a href="https://buy.stripe.com/test_bouton_poutchou_courageou" class="btn stripe">Acheter (Stripe)</a>
+          <!-- Lien PayPal à modifier pour Courageou -->
+          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
         </div>
       </div>
-      <!-- Carte produit pour Veillou -->
-      <div class="product-card">
-        <!-- Remplacer l'image par le visuel du Poutchou Veillou -->
-        <img src="https://source.unsplash.com/featured/?owl" alt="Veillou – Hibou (&OElig;il de tigre)">
-        <div class="product-card-content">
-          <h3>Veillou</h3>
-          <p><strong>Animal :</strong> Hibou</p>
-          <p><strong>Pierre :</strong> Œil de tigre</p>
-          <div class="buy-buttons">
-            <a href="#" class="btn btn-stripe">Acheter avec Stripe</a> <!-- Lien Stripe fictif -->
-            <a href="#" class="btn btn-paypal">Acheter avec PayPal</a> <!-- Lien PayPal fictif -->
-          </div>
+    </section>
+    <!-- Veillou -->
+    <section class="model">
+      <img src="assets/images/veillou.jpg" alt="Poutchou Veillou – Hibou, Œil de tigre">
+      <div class="details">
+        <h2>Poutchou Veillou</h2>
+        <p><strong>Animal :</strong> Hibou<br><strong>Pierre :</strong> Œil de tigre</p>
+        <div class="buttons">
+          <!-- Lien Stripe à modifier pour Veillou -->
+          <a href="https://buy.stripe.com/test_bouton_poutchou_veillou" class="btn stripe">Acheter (Stripe)</a>
+          <!-- Lien PayPal à modifier pour Veillou -->
+          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
         </div>
       </div>
-      <!-- Carte produit pour Calinou -->
-      <div class="product-card">
-        <!-- Remplacer l'image par le visuel du Poutchou Calinou -->
-        <img src="https://source.unsplash.com/featured/?koala" alt="Calinou – Koala (Améthyste)">
-        <div class="product-card-content">
-          <h3>Calinou</h3>
-          <p><strong>Animal :</strong> Koala</p>
-          <p><strong>Pierre :</strong> Améthyste</p>
-          <div class="buy-buttons">
-            <a href="#" class="btn btn-stripe">Acheter avec Stripe</a> <!-- Lien Stripe fictif -->
-            <a href="#" class="btn btn-paypal">Acheter avec PayPal</a> <!-- Lien PayPal fictif -->
-          </div>
+    </section>
+    <!-- Calinou -->
+    <section class="model">
+      <img src="assets/images/calinou.jpg" alt="Poutchou Calinou – Koala, Am\u00e9thyste">
+      <div class="details">
+        <h2>Poutchou Calinou</h2>
+        <p><strong>Animal :</strong> Koala<br><strong>Pierre :</strong> Am\u00e9thyste</p>
+        <div class="buttons">
+          <!-- Lien Stripe à modifier pour Calinou -->
+          <a href="https://buy.stripe.com/test_bouton_poutchou_calinou" class="btn stripe">Acheter (Stripe)</a>
+          <!-- Lien PayPal à modifier pour Calinou -->
+          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
         </div>
       </div>
-      <!-- Carte produit pour Tranquilou -->
-      <div class="product-card">
-        <!-- Remplacer l'image par le visuel du Poutchou Tranquilou -->
-        <img src="https://source.unsplash.com/featured/?elephant" alt="Tranquilou – Éléphant (Sodalite)">
-        <div class="product-card-content">
-          <h3>Tranquilou</h3>
-          <p><strong>Animal :</strong> Éléphant</p>
-          <p><strong>Pierre :</strong> Sodalite</p>
-          <div class="buy-buttons">
-            <a href="#" class="btn btn-stripe">Acheter avec Stripe</a> <!-- Lien Stripe fictif -->
-            <a href="#" class="btn btn-paypal">Acheter avec PayPal</a> <!-- Lien PayPal fictif -->
-          </div>
+    </section>
+    <!-- Tranquilou (placeholder) -->
+    <section class="model">
+      <img src="assets/images/tranquilou.jpg" alt="Poutchou Tranquilou – [Animal], [Pierre] (placeholder)">
+      <div class="details">
+        <h2>Poutchou Tranquilou</h2>
+        <p><strong>Animal :</strong> Tortue (exemple)<br><strong>Pierre :</strong> Lapis-lazuli (exemple)</p>
+        <div class="buttons">
+          <!-- Lien Stripe à modifier pour Tranquilou -->
+          <a href="https://buy.stripe.com/test_bouton_poutchou_tranquilou" class="btn stripe">Acheter (Stripe)</a>
+          <!-- Lien PayPal à modifier pour Tranquilou -->
+          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
         </div>
       </div>
-      <!-- Carte produit pour Bambou -->
-      <div class="product-card">
-        <!-- Remplacer l'image par le visuel du Poutchou Bambou -->
-        <img src="https://source.unsplash.com/featured/?panda" alt="Bambou – Panda (Howlite)">
-        <div class="product-card-content">
-          <h3>Bambou</h3>
-          <p><strong>Animal :</strong> Panda</p>
-          <p><strong>Pierre :</strong> Howlite</p>
-          <div class="buy-buttons">
-            <a href="#" class="btn btn-stripe">Acheter avec Stripe</a> <!-- Lien Stripe fictif -->
-            <a href="#" class="btn btn-paypal">Acheter avec PayPal</a> <!-- Lien PayPal fictif -->
-          </div>
+    </section>
+    <!-- Bambou (placeholder) -->
+    <section class="model">
+      <img src="assets/images/bambou.jpg" alt="Poutchou Bambou – Panda, Jade (placeholder)">
+      <div class="details">
+        <h2>Poutchou Bambou</h2>
+        <p><strong>Animal :</strong> Panda (exemple)<br><strong>Pierre :</strong> Jade (exemple)</p>
+        <div class="buttons">
+          <!-- Lien Stripe à modifier pour Bambou -->
+          <a href="https://buy.stripe.com/test_bouton_poutchou_bambou" class="btn stripe">Acheter (Stripe)</a>
+          <!-- Lien PayPal à modifier pour Bambou -->
+          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Section sur la symbolique -->
-  <section id="symbolique">
-    <h2>Symbolique des animaux et des pierres</h2>
-    <ul>
-      <li><strong>Chat & Quartz Rose (Toudou)</strong> – Le chat symbolise l'indépendance et la douceur, tandis que le quartz rose est la pierre de l'amour inconditionnel et de la paix intérieure. Ensemble, ils offrent un câlin de tendresse pour le cœur.</li>
-      <li><strong>Abeille & Pierre de lave (Abeillou)</strong> – L'abeille incarne la douceur, la communauté et le travail patient ; la pierre de lave apporte force, enracinement et énergie brûlante pour surmonter les défis.</li>
-      <li><strong>Grenouille & Aventurine Verte (Luckyyou)</strong> – La grenouille représente la transformation, le renouveau et l'espoir ; l'aventurine verte est la pierre de la chance et de l'optimisme. Ensemble, ils aident à attirer les petits miracles du quotidien.</li>
-      <li><strong>Tigre & Cornaline (Courageou)</strong> – Le tigre incarne le courage, la force et la confiance en soi ; la cornaline est une pierre vivifiante qui stimule le courage et la motivation. Ce duo donne l'élan nécessaire pour aller de l'avant sans peur.</li>
-      <li><strong>Hibou & Œil de tigre (Veillou)</strong> – Le hibou symbolise la sagesse, l'intuition et la clairvoyance ; l'Œil de tigre est une pierre protectrice qui apporte confiance et énergie positive. Ils vous offrent une protection bienveillante dans votre quotidien.</li>
-      <li><strong>Koala & Améthyste (Calinou)</strong> – Le koala évoque la tranquillité, le calme et la douceur ; l'améthyste est la pierre de la sérénité et de l'équilibre émotionnel. Ensemble, ils créent une bulle de paix intérieure pour vous relaxer.</li>
-      <li><strong>Éléphant & Sodalite (Tranquilou)</strong> – L'éléphant symbolise la sagesse, la force tranquille et la mémoire ; la sodalite favorise la clarté d'esprit et la communication. Ce duo rassurant apporte courage et sérénité pour affronter la journée.</li>
-      <li><strong>Panda & Howlite (Bambou)</strong> – Le panda représente la douceur, l'équilibre et la paix intérieure ; la howlite est une pierre apaisante qui calme les émotions et apporte patience. Ensemble, ils aident à maintenir un esprit tranquille et harmonieux.</li>
-    </ul>
-  </section>
-
-  <!-- Section de réassurance -->
-  <section id="reassurance">
-    <h2>Nos engagements</h2>
-    <ul>
-      <li><strong>Fait main :</strong> Chaque Poutchou est fabriqué artisanalement dans notre atelier pour garantir qualité et authenticité.</li>
-      <li><strong>Qualité soignée :</strong> Nous sélectionnons des pierres naturelles de qualité et accordons le plus grand soin aux finitions.</li>
-      <li><strong>Emballage soigné :</strong> Vos grigris sont soigneusement emballés pour un envoi sécurisé jusqu'à vous.</li>
-      <li><strong>Savoir-faire artisanal :</strong> Chaque création est unique et réalisée par nos artisans passionnés.</li>
-    </ul>
-  </section>
-
-  <!-- Pied de page ou informations complémentaires si nécessaire -->
-  <footer>
-  </footer>
-
+    </section>
+  </main>
 </body>
 </html>
