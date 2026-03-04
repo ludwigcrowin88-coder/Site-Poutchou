@@ -41,9 +41,11 @@
     }
     .brand h1{
       margin:0;
-      font-size:1.4rem;
+      font-size:2.25rem; /* titre plus grand */
       color:#0f172a;
-      font-weight:700;
+      font-weight:800;
+      text-align:center;
+      width:100%;
     }
     nav.site-nav a{
       color:var(--muted);
@@ -61,16 +63,28 @@
       gap:1.5rem;
       align-items:center;
       padding:1.25rem;
+      justify-content:center;
     }
-    .hero .hero-text{ flex:1; }
+    .hero .hero-text{ flex:1; text-align:center; }
     .hero h2{
       margin:0 0 .5rem 0;
-      font-size:2rem;
+      font-size:1.6rem;
       color:#0b1220;
       line-height:1.05;
     }
-    .hero p{ color:var(--muted); margin:0 0 1rem 0; }
-    .cta{ display:flex; gap:.75rem; flex-wrap:wrap; }
+    .hero p{ color:var(--muted); margin:0 0 1rem 0; font-size:1rem; }
+    .key-message{
+      margin-top:0.75rem;
+      background:linear-gradient(90deg, rgba(31,111,235,0.04), rgba(245,158,11,0.02));
+      padding:0.9rem 1rem;
+      border-radius:8px;
+      color:#0b1220;
+      font-weight:600;
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .cta{ display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
     .btn.primary{
       background:var(--accent);
       color:white;
@@ -139,6 +153,7 @@
     @media (max-width:600px){
       .hero{ flex-direction:column; text-align:left; padding:.75rem; }
       .brand{ flex-direction:column; align-items:flex-start; gap:.5rem; }
+      .brand h1{ text-align:left; font-size:1.6rem; }
       section.model{ align-items:flex-start; }
       section.model img{ width:100px; height:100px; }
     }
@@ -147,7 +162,7 @@
 <body>
   <header class="site-header">
     <div class="brand">
-      <h1>Poutchous – Grigris de sac artisanaux</h1>
+      <h1>Poutchou</h1>
       <nav class="site-nav" aria-label="Navigation">
         <a href="#collections">Collections</a>
         <a href="#apropos">À propos</a>
@@ -159,8 +174,8 @@
   <!-- Hero -->
   <section class="hero" aria-label="Présentation">
     <div class="hero-text">
-      <h2>Grigris faits main pour vous accompagner partout</h2>
-      <p>Pièces uniques, pierres naturelles et finitions soignées. Offrez‑vous un porte‑bonheur personnalisé.</p>
+      <h2>Un compagnon unique, pas seulement un porte‑clé</h2>
+      <p class="key-message">Un Poutchou n'est pas seulement un grigri ou un porte‑clé : c'est une petite création artisanale pensée pour t'accompagner au quotidien — une pièce porteuse d'intention, façonnée à la main avec une pierre naturelle et une histoire. Chaque Poutchou est unique, choisi pour sa symbolique et sa finition, pour t'offrir réconfort, chance ou souvenir.</p>
       <div class="cta">
         <a class="btn primary" href="#collections">Voir les modèles</a>
         <a class="btn secondary" href="#contact">Commander</a>
@@ -286,8 +301,29 @@
 
     <section id="contact" style="margin-top:1rem; padding:1rem; background:var(--card); border-radius:var(--radius); border:1px solid #e6e9ef;">
       <h3 style="margin:0 0 .5rem 0; font-size:1.05rem;">Contact</h3>
-      <p style="color:var(--muted); margin:0;">Pour commandes personnalisées ou questions, contactez via PayPal.me ou mettez un lien de contact ici.</p>
+      <!-- Contact paragraph removed as requested -->
     </section>
+    <section id="contact" style="margin-top:1rem; padding:1.25rem; background:var(--card); border-radius:var(--radius); border:1px solid #e6e9ef;">
+  <h3 style="margin:0 0 .5rem 0; font-size:1.05rem;">Contact</h3>
+  <p style="color:var(--muted); margin:0 0 .75rem 0;">
+    Pour toute commande personnalisée, question ou rendez‑vous, contacte‑nous :
+  </p>
+
+  <ul style="list-style:none; padding:0; margin:0 0 1rem 0; color:#111827;">
+    <li><strong>Téléphone</strong> — <a href="tel:+33612345678" style="color:var(--accent); text-decoration:none;">+33 6 12 34 56 78</a></li>
+    <li><strong>Email</strong> — <a href="mailto:contact@poutchou.example" style="color:var(--accent); text-decoration:none;">contact@poutchou.example</a></li>
+    <li><strong>Adresse</strong> — 12 rue des Grigris, 81160 Saint-Juéry, France</li>
+    <li><strong>Horaires</strong> — Lun–Ven 10:00–18:00</li>
+  </ul>
+
+  <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:.5rem;">
+    <a href="tel:+33612345678" class="btn primary" style="padding:.45rem .75rem;">Appeler</a>
+    <a href="mailto:contact@poutchou.example" class="btn secondary" style="padding:.45rem .75rem;">Envoyer un email</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=12+rue+des+Grigris+Saint-Ju%C3%A9ry" target="_blank" rel="noopener noreferrer" class="btn" style="background:transparent;border:1px solid #e6e9ef;padding:.45rem .75rem;border-radius:6px;color:var(--muted);">Voir sur la carte</a>
+  </div>
+</section>
+
   </main>
 </body>
 </html>
+
