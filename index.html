@@ -4,303 +4,289 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poutchou - Grigris de sac</title>
+  <meta name="description" content="Poutchous – Grigris de sac artisanaux, faits main.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#fafafa;
-    --card:#ffffff;
-    --muted:#6b7280;
-    --accent:#1f6feb; /* bleu principal, change si tu veux */
-    --accent-2:#f59e0b; /* jaune accent */
-    --radius:10px;
-    --max-width:1100px;
-  }
-  body{
-    font-family: "Inter", Arial, sans-serif;
-    margin:0;
-    padding:0;
-    background:var(--bg);
-    color:#111827;
-    -webkit-font-smoothing:antialiased;
-  }
-  header.site-header{
-    background:linear-gradient(90deg, rgba(31,111,235,0.06), rgba(245,158,11,0.03));
-    padding:2rem 1rem;
-    text-align:center;
-  }
-  header.site-header .brand{
-    max-width:var(--max-width);
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:1rem;
-  }
-  header.site-header h1{
-    margin:0;
-    font-size:1.6rem;
-    color:#0f172a;
-    font-weight:700;
-  }
-  header.site-header nav a{
-    color:var(--muted);
-    text-decoration:none;
-    margin-left:1rem;
-    font-weight:600;
-  }
-
-  /* Hero */
-  .hero{
-    max-width:var(--max-width);
-    margin:1.25rem auto;
-    display:flex;
-    gap:1.5rem;
-    align-items:center;
-    padding:1.25rem;
-  }
-  .hero .hero-text{
-    flex:1;
-  }
-  .hero h2{
-    margin:0 0 .5rem 0;
-    font-size:2rem;
-    color:#0b1220;
-  }
-  .hero p{ color:var(--muted); margin:0 0 1rem 0; }
-  .hero .cta{
-    display:flex;
-    gap:.75rem;
-    flex-wrap:wrap;
-  }
-  .btn.primary{
-    background:var(--accent);
-    color:white;
-    padding:.6rem 1rem;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:700;
-  }
-  .btn.secondary{
-    background:transparent;
-    border:2px solid var(--accent);
-    color:var(--accent);
-    padding:.5rem .9rem;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:700;
-  }
-
-  /* Cards grid for sections */
-  main { max-width:var(--max-width); margin:0 auto; padding:1rem; }
-  .models-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:1rem;
-  }
-  section.model{
-    display:flex;
-    gap:1rem;
-    align-items:flex-start;
-    padding:1rem;
-    background:var(--card);
-    border-radius:var(--radius);
-    border:1px solid #e6e9ef;
-  }
-  section.model img{ width:120px; height:120px; object-fit:cover; border-radius:8px; flex-shrink:0; }
-  section.model .details h2{ margin:0 0 .25rem 0; font-size:1.05rem; }
-  section.model .details p{ margin:0; color:var(--muted); font-size:.95rem; }
-
-  @media (max-width:600px){
-    .hero{ flex-direction:column; text-align:left; }
-    header.site-header .brand{ flex-direction:column; align-items:flex-start; gap:.5rem; }
-  }
-</style>
-
+    :root{
+      --bg:#fafafa;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#1f6feb;
+      --accent-2:#f59e0b;
+      --radius:10px;
+      --max-width:1100px;
+    }
+    html,body{height:100%;}
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Inter", Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fafafa;
-      color: #333;
+      background-color: var(--bg);
+      color: #111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    header {
-      text-align: center;
-      padding: 2rem;
-      background-color: #f0f0f5;
+    /* Header / Brand */
+    header.site-header{
+      background: linear-gradient(90deg, rgba(31,111,235,0.06), rgba(245,158,11,0.03));
+      padding: 1.25rem;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #555;
+    .brand {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
     }
-    main {
-      max-width: 960px;
-      margin: auto;
-      padding: 1rem;
+    .brand h1{
+      margin:0;
+      font-size:1.4rem;
+      color:#0f172a;
+      font-weight:700;
     }
-    section.model {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
+    nav.site-nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:1rem;
+      font-weight:600;
+      font-size:0.95rem;
     }
-    section.model img {
-      max-width: 150px;
-      width: 100%;
-      height: auto;
-      margin-right: 1rem;
-      border-radius: 4px;
+
+    /* Hero */
+    .hero{
+      max-width:var(--max-width);
+      margin:1.25rem auto;
+      display:flex;
+      gap:1.5rem;
+      align-items:center;
+      padding:1.25rem;
     }
-    section.model .details {
-      flex: 1;
+    .hero .hero-text{ flex:1; }
+    .hero h2{
+      margin:0 0 .5rem 0;
+      font-size:2rem;
+      color:#0b1220;
+      line-height:1.05;
     }
-    section.model h2 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      color: #444;
+    .hero p{ color:var(--muted); margin:0 0 1rem 0; }
+    .cta{ display:flex; gap:.75rem; flex-wrap:wrap; }
+    .btn.primary{
+      background:var(--accent);
+      color:white;
+      padding:.6rem 1rem;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
     }
-    section.model p {
-      margin: 0.5rem 0;
+    .btn.secondary{
+      background:transparent;
+      border:2px solid var(--accent);
+      color:var(--accent);
+      padding:.5rem .9rem;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
     }
-    .buttons {
-      margin-top: 1rem;
+    .hero-image img{ width:260px; height:160px; object-fit:cover; border-radius:12px; display:block; }
+
+    /* Main / Grid */
+    main { max-width:var(--max-width); margin:0 auto; padding:1rem; }
+    .models-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:1rem;
     }
-    .btn {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 0.9rem;
+    section.model{
+      display:flex;
+      gap:1rem;
+      align-items:flex-start;
+      padding:1rem;
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid #e6e9ef;
     }
-    .btn.stripe {
-      background-color: #6772E5;
-      color: white;
+    section.model img{
+      width:120px;
+      height:120px;
+      object-fit:cover;
+      border-radius:8px;
+      flex-shrink:0;
     }
-    .btn.paypal {
-      background-color: #FFC439;
-      color: #154360;
+    section.model .details h2{ margin:0 0 .25rem 0; font-size:1.05rem; color:#111827; }
+    section.model .details p{ margin:0; color:var(--muted); font-size:.95rem; }
+    .buttons{ margin-top:0.75rem; }
+    .btn.stripe{
+      background-color:#6772E5;
+      color:white;
+      padding:.45rem .75rem;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:700;
+      display:inline-block;
+      margin-right:.5rem;
     }
-    @media (max-width: 600px) {
-      section.model {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      section.model img {
-        margin-bottom: 1rem;
-        margin-right: 0;
-      }
+    .btn.paypal{
+      background-color:#FFC439;
+      color:#154360;
+      padding:.45rem .75rem;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:700;
+      display:inline-block;
+    }
+
+    @media (max-width:600px){
+      .hero{ flex-direction:column; text-align:left; padding:.75rem; }
+      .brand{ flex-direction:column; align-items:flex-start; gap:.5rem; }
+      section.model{ align-items:flex-start; }
+      section.model img{ width:100px; height:100px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Poutchous – Grigris de sac artisanaux</h1>
+  <header class="site-header">
+    <div class="brand">
+      <h1>Poutchous – Grigris de sac artisanaux</h1>
+      <nav class="site-nav" aria-label="Navigation">
+        <a href="#collections">Collections</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Présentation">
+    <div class="hero-text">
+      <h2>Grigris faits main pour vous accompagner partout</h2>
+      <p>Pièces uniques, pierres naturelles et finitions soignées. Offrez‑vous un porte‑bonheur personnalisé.</p>
+      <div class="cta">
+        <a class="btn primary" href="#collections">Voir les modèles</a>
+        <a class="btn secondary" href="#contact">Commander</a>
+      </div>
+    </div>
+    <div class="hero-image" aria-hidden="true">
+      <img src="assets/images/toudou.jpg" alt="">
+    </div>
+  </section>
+
   <main>
-    <!-- Toudou -->
-    <section class="model">
-      <img loading="lazy" decoding="async" src="assets/images/toudou.jpg" alt="Poutchou Toudou – Chat, Quartz rose">
-      <div class="details">
-        <h2>Poutchou Toudou</h2>
-        <p><strong>Animal :</strong> Chat<br><strong>Pierre :</strong> Quartz rose</p>
-        <div class="buttons">
-          <a href="https://buy.stripe.com/test_bouton_poutchou_toudou" class="btn stripe">Acheter (Stripe)</a>
-          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
+    <div id="collections" class="models-grid">
+      <!-- Toudou -->
+      <section class="model">
+        <img loading="lazy" decoding="async" src="assets/images/toudou.jpg" alt="Poutchou Toudou – Chat, Quartz rose">
+        <div class="details">
+          <h2>Poutchou Toudou</h2>
+          <p><strong>Animal :</strong> Chat<br><strong>Pierre :</strong> Quartz rose</p>
+          <div class="buttons">
+            <a href="https://buy.stripe.com/test_bouton_poutchou_toudou" class="btn stripe">Acheter (Stripe)</a>
+            <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Abeillou -->
+      <section class="model">
+        <img loading="lazy" decoding="async" src="assets/images/abeillou.jpg" alt="Poutchou Abeillou – Abeille, Citrine">
+        <div class="details">
+          <h2>Poutchou Abeillou</h2>
+          <p><strong>Animal :</strong> Abeille<br><strong>Pierre :</strong> Citrine (exemple)</p>
+          <div class="buttons">
+            <a href="https://buy.stripe.com/test_bouton_poutchou_abeillou" class="btn stripe">Acheter (Stripe)</a>
+            <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Luckyou -->
+      <section class="model">
+        <img loading="lazy" decoding="async" src="assets/images/luckyou.jpg" alt="Poutchou Luckyou – Grenouille, Aventurine">
+        <div class="details">
+          <h2>Poutchou Luckyou</h2>
+          <p><strong>Animal :</strong> Grenouille<br><strong>Pierre :</strong> Aventurine</p>
+          <div class="buttons">
+            <a href="https://buy.stripe.com/test_bouton_poutchou_luckyou" class="btn stripe">Acheter (Stripe)</a>
+            <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Courageou -->
+      <section class="model">
+        <img loading="lazy" decoding="async" src="assets/images/courageou.jpg" alt="Poutchou Courageou – Tigre, Cornaline">
+        <div class="details">
+          <h2>Poutchou Courageou</h2>
+          <p><strong>Animal :</strong> Tigre<br><strong>Pierre :</strong> Cornaline</p>
+          <div class="buttons">
+            <a href="https://buy.stripe.com/test_bouton_poutchou_courageou" class="btn stripe">Acheter (Stripe)</a>
+            <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Veillou -->
+      <section class="model">
+        <img loading="lazy" decoding="async" src="assets/images/veillou.jpg" alt="Poutchou Veillou – Hibou, Œil de tigre">
+        <div class="details">
+          <h2>Poutchou Veillou</h2>
+          <p><strong>Animal :</strong> Hibou<br><strong>Pierre :</strong> Œil de tigre</p>
+          <div class="buttons">
+            <a href="https://buy.stripe.com/test_bouton_poutchou_veillou" class="btn stripe">Acheter (Stripe)</a>
+            <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calinou -->
+      <section class="model">
+        <img loading="lazy" decoding="async" src="assets/images/calinou1.jpg" alt="Poutchou Calinou – Koala, Améthyste">
+        <div class="details">
+          <h2>Poutchou Calinou</h2>
+          <p><strong>Animal :</strong> Koala<br><strong>Pierre :</strong> Améthyste</p>
+          <div class="buttons">
+            <a href="https://buy.stripe.com/test_bouton_poutchou_calinou" class="btn stripe">Acheter (Stripe)</a>
+            <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tranquilou -->
+      <section class="model">
+        <img loading="lazy" decoding="async" src="assets/images/tranquilou.jpg" alt="Poutchou Tranquilou – Tortue, Lapis-lazuli">
+        <div class="details">
+          <h2>Poutchou Tranquilou</h2>
+          <p><strong>Animal :</strong> Tortue (exemple)<br><strong>Pierre :</strong> Lapis-lazuli (exemple)</p>
+          <div class="buttons">
+            <a href="https://buy.stripe.com/test_bouton_poutchou_tranquilou" class="btn stripe">Acheter (Stripe)</a>
+            <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bambou -->
+      <section class="model">
+        <img loading="lazy" decoding="async" src="assets/images/bambou.jpg" alt="Poutchou Bambou – Panda, Jade">
+        <div class="details">
+          <h2>Poutchou Bambou</h2>
+          <p><strong>Animal :</strong> Panda (exemple)<br><strong>Pierre :</strong> Jade (exemple)</p>
+          <div class="buttons">
+            <a href="https://buy.stripe.com/test_bouton_poutchou_bambou" class="btn stripe">Acheter (Stripe)</a>
+            <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- À propos / Contact anchors -->
+    <section id="apropos" style="margin-top:1.5rem; background:transparent;">
+      <h3 style="margin:0 0 .5rem 0; font-size:1.1rem;">À propos</h3>
+      <p style="color:var(--muted); margin:0 0 1rem 0;">Site officiel de Poutchou le grigri qui t'accompagne partout. Pièces artisanales, pierres naturelles et finitions soignées.</p>
     </section>
-    <!-- Abeillou (placeholder) -->
-    <section class="model">
-      <img loading="lazy" decoding="async" src="assets/images/abeillou.jpg" alt="Poutchou Abeillou – Abeille, Citrine">
-      <div class="details">
-        <h2>Poutchou Abeillou</h2>
-        <p><strong>Animal :</strong> Abeille<br><strong>Pierre :</strong> Citrine (exemple)</p>
-        <div class="buttons">
-          <a href="https://buy.stripe.com/test_bouton_poutchou_abeillou" class="btn stripe">Acheter (Stripe)</a>
-          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
-        </div>
-      </div>
-    </section>
-    <!-- Luckyou -->
-    <section class="model">
-      <img loading="lazy" decoding="async" src="assets/images/luckyou.jpg" alt="Poutchou Luckyou – Grenouille, Aventurine">
-      <div class="details">
-        <h2>Poutchou Luckyou</h2>
-        <p><strong>Animal :</strong> Grenouille<br><strong>Pierre :</strong> Aventurine</p>
-        <div class="buttons">
-          <a href="https://buy.stripe.com/test_bouton_poutchou_luckyou" class="btn stripe">Acheter (Stripe)</a>
-          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
-        </div>
-      </div>
-    </section>
-    <!-- Courageou -->
-    <section class="model">
-      <img loading="lazy" decoding="async" src="assets/images/courageou.jpg" alt="Poutchou Courageou – Tigre, Cornaline">
-      <div class="details">
-        <h2>Poutchou Courageou</h2>
-        <p><strong>Animal :</strong> Tigre<br><strong>Pierre :</strong> Cornaline</p>
-        <div class="buttons">
-          <a href="https://buy.stripe.com/test_bouton_poutchou_courageou" class="btn stripe">Acheter (Stripe)</a>
-          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
-        </div>
-      </div>
-    </section>
-    <!-- Veillou -->
-    <section class="model">
-      <img loading="lazy" decoding="async" src="assets/images/veillou.jpg" alt="Poutchou Veillou – Hibou, Œil de tigre">
-      <div class="details">
-        <h2>Poutchou Veillou</h2>
-        <p><strong>Animal :</strong> Hibou<br><strong>Pierre :</strong> Œil de tigre</p>
-        <div class="buttons">
-          <a href="https://buy.stripe.com/test_bouton_poutchou_veillou" class="btn stripe">Acheter (Stripe)</a>
-          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
-        </div>
-      </div>
-    </section>
-    <!-- Calinou -->
-    <section class="model">
-      <img loading="lazy" decoding="async" src="assets/images/calinou1.jpg" alt="Poutchou Calinou – Koala, Améthyste">
-      <div class="details">
-        <h2>Poutchou Calinou</h2>
-        <p><strong>Animal :</strong> Koala<br><strong>Pierre :</strong> Améthyste</p>
-        <div class="buttons">
-          <a href="https://buy.stripe.com/test_bouton_poutchou_calinou" class="btn stripe">Acheter (Stripe)</a>
-          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
-        </div>
-      </div>
-    </section>
-    <!-- Tranquilou (placeholder) -->
-    <section class="model">
-      <img loading="lazy" decoding="async" src="assets/images/tranquilou.jpg" alt="Poutchou Tranquilou – Tortue, Lapis-lazuli">
-      <div class="details">
-        <h2>Poutchou Tranquilou</h2>
-        <p><strong>Animal :</strong> Tortue (exemple)<br><strong>Pierre :</strong> Lapis-lazuli (exemple)</p>
-        <div class="buttons">
-          <a href="https://buy.stripe.com/test_bouton_poutchou_tranquilou" class="btn stripe">Acheter (Stripe)</a>
-          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
-        </div>
-      </div>
-    </section>
-    <!-- Bambou (placeholder) -->
-    <section class="model">
-      <img loading="lazy" decoding="async" src="assets/images/bambou.jpg" alt="Poutchou Bambou – Panda, Jade (placeholder)">
-      <div class="details">
-        <h2>Poutchou Bambou</h2>
-        <p><strong>Animal :</strong> Panda (exemple)<br><strong>Pierre :</strong> Jade (exemple)</p>
-        <div class="buttons">
-          <a href="https://buy.stripe.com/test_bouton_poutchou_bambou" class="btn stripe">Acheter (Stripe)</a>
-          <a href="https://www.paypal.com/paypalme/nomutilisateur/9" class="btn paypal">Acheter (PayPal)</a>
-        </div>
-      </div>
+
+    <section id="contact" style="margin-top:1rem; padding:1rem; background:var(--card); border-radius:var(--radius); border:1px solid #e6e9ef;">
+      <h3 style="margin:0 0 .5rem 0; font-size:1.05rem;">Contact</h3>
+      <p style="color:var(--muted); margin:0;">Pour commandes personnalisées ou questions, contactez via PayPal.me ou mettez un lien de contact ici.</p>
     </section>
   </main>
 </body>
