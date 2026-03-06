@@ -36,6 +36,31 @@ h1{
   gap: 30px;
 }
 
+/* Cartes produits */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Images carrées */
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* carré parfait */
+  object-fit: cover;       /* recadrage propre */
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+
 /* → Tablette : 2 colonnes */
 @media (max-width:1024px) {
   .container {
