@@ -48,12 +48,13 @@ h1{
   transform:translateY(-5px);
 }
 
-/* Images des cartes uniformes et responsive */
-.card img{
-  width:100%;
-  height:260px; /* hauteur fixe */
-  border-radius:10px;
-  object-fit:cover; /* remplissage en coupant si nécessaire */
+/* → Image uniforme dans les cartes produits */
+.card img {
+  width: 100%;
+  height: 260px;       /* hauteur fixe (peut être ajustée) */
+  object-fit: cover;   /* recadre l’image proprement */
+  border-radius: 10px;
+  display: block;      /* supprime les espaces sous les images */
 }
 
 @media (min-width:1024px){
