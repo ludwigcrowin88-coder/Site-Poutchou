@@ -1,1 +1,137 @@
+<style>
 
+  body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#fafafa;
+  color:#333;
+}
+
+header{
+  text-align:center;
+  padding:80px 20px 40px 20px;
+}
+
+h1{
+  font-size:72px;
+  margin-bottom:20px;
+}
+
+.subtitle{
+  font-size:22px;
+  max-width:700px;
+  margin:auto;
+  color:#555;
+  line-height:1.6;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* Cartes */
+.card{
+  background:white;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  padding:20px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* Images des cartes uniformes et responsive */
+.card img{
+  width:100%;
+  aspect-ratio:1 / 1;       /* carré sur mobile */
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+}
+
+@media (min-width:1024px){
+  .card img{
+    aspect-ratio:4 / 3;     /* rectangle sur grand écran */
+  }
+}
+
+.card h3{
+  margin-top:15px;
+  font-size:24px;
+}
+
+.desc{
+  color:#666;
+  font-size:15px;
+}
+
+.story{
+  margin-top:10px;
+  font-size:14px;
+  line-height:1.5;
+  color:#666;
+}
+
+.highlight{
+  font-size:18px;
+  font-weight:bold;
+  margin-top:10px;
+  color:#ff5a8a;
+}
+
+.price{
+  font-size:26px;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+.buttons{
+  margin-top:15px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  margin:5px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+  color:white;
+  transition:0.2s;
+}
+
+.btn:hover{
+  opacity:0.9;
+  transform:translateY(-2px);
+}
+
+.stripe{
+  background:#635bff;
+}
+
+.paypal{
+  background:#0070ba;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  margin-top:60px;
+  color:#777;
+}
+
+@media (min-width:1600px){
+  .container{
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  }
+}
+  
+</style>
