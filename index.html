@@ -40,7 +40,6 @@ h1{
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
 }
-
 .card{
   background:white;
   border-radius:12px;
@@ -56,15 +55,16 @@ h1{
 
 .card img{
   width:100%;
+  aspect-ratio:1 / 1;   /* toutes les images auront le même ratio carré */
+  object-fit:cover;      /* recadrage sans déformation */
   border-radius:10px;
-  object-fit:cover;
+  display:block;         /* évite les petits espaces sous les images */
 }
 
 .card h3{
   margin-top:15px;
   font-size:24px;
 }
-
 .desc{
   color:#666;
   font-size:15px;
