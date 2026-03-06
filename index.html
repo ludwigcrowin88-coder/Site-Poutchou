@@ -55,10 +55,16 @@ h1{
 
 .card img{
   width:100%;
-  aspect-ratio:1 / 1;   /* toutes les images auront le même ratio carré */
-  object-fit:cover;      /* recadrage sans déformation */
+  aspect-ratio:1 / 1;
+  object-fit:cover;
   border-radius:10px;
-  display:block;         /* évite les petits espaces sous les images */
+  display:block;
+}
+
+@media (min-width:1024px){
+  .card img{
+    aspect-ratio:4 / 3;
+  }
 }
 
 .card h3{
