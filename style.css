@@ -28,7 +28,7 @@ h1{
 
 /* → Grille produits 4 colonnes maximum */
 .container {
-  max-width:1200px;
+  width:600px
   margin:auto;
   padding:40px 20px;
   display: grid;
