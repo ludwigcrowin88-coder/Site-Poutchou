@@ -202,3 +202,20 @@ footer{
 .main-nav ul li a:hover{
   color:#635bff;
 }
+.cart-icon{
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:24px;
+  cursor:pointer;
+}
+
+#cart-count{
+  background:#ff5a8a;
+  color:white;
+  border-radius:50%;
+  padding:2px 6px;
+  font-size:14px;
+  vertical-align:top;
+  margin-left:5px;
+}
