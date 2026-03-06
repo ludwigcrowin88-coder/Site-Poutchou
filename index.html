@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,78 +11,132 @@
 <style>
 
 body{
-font-family:Arial, Helvetica, sans-serif;
-background:#f9f9f9;
 margin:0;
-padding:0;
-text-align:center;
+font-family:Arial, Helvetica, sans-serif;
+background:#fafafa;
+color:#333;
 }
 
 header{
-padding:60px 20px;
+text-align:center;
+padding:80px 20px 40px 20px;
 }
 
 h1{
-font-size:60px;
-margin-bottom:10px;
+font-size:72px;
+margin-bottom:20px;
 }
 
 .subtitle{
-font-size:20px;
-color:#555;
-max-width:600px;
+font-size:22px;
+max-width:700px;
 margin:auto;
+color:#555;
+line-height:1.6;
 }
 
 .container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-padding:40px;
+
 max-width:1200px;
 margin:auto;
+padding:40px;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+
 }
 
 .card{
+
 background:white;
-border-radius:10px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 padding:20px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+text-align:center;
+
+transition:0.3s;
+
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card img{
+
 width:100%;
 border-radius:10px;
+
 }
 
 .card h2{
-margin-top:10px;
+margin-top:15px;
+font-size:24px;
+}
+
+.desc{
+color:#666;
+font-size:15px;
 }
 
 .price{
-font-size:22px;
+
+font-size:26px;
 font-weight:bold;
-margin:10px 0;
+margin-top:10px;
+
 }
 
-.buy{
+.buttons{
+margin-top:15px;
+}
+
+.btn{
+
 display:inline-block;
-padding:10px 20px;
-background:#ff7a9c;
-color:white;
-text-decoration:none;
-border-radius:5px;
+padding:12px 20px;
 margin:5px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+color:white;
+
 }
 
-.buy:hover{
-background:#ff4f7a;
+.stripe{
+background:#635bff;
+}
+
+.paypal{
+background:#0070ba;
 }
 
 footer{
-margin-top:50px;
-padding:30px;
+
+text-align:center;
+padding:40px;
+margin-top:60px;
 color:#777;
+
+}
+
+.story{
+
+margin-top:10px;
+font-size:14px;
+line-height:1.5;
+color:#666;
+
+}
+
+.highlight{
+
+font-size:18px;
+font-weight:bold;
+margin-top:10px;
+color:#ff5a8a;
+
 }
 
 </style>
@@ -94,8 +150,11 @@ color:#777;
 <h1>LES POUTCHOU</h1>
 
 <p class="subtitle">
-Les Poutchou ce sont des petits grigris porte-bonheur.<br>
+
+Les Poutchou ce sont des petits grigris porte-bonheur.
+
 Ils sont imaginés pour glisser un peu de magie, de douceur et de poésie dans le quotidien, fabriqués à la main.
+
 </p>
 
 </header>
@@ -103,75 +162,175 @@ Ils sont imaginés pour glisser un peu de magie, de douceur et de poésie dans l
 <section class="container">
 
 <div class="card">
+
 <img src="assets/images/toudou.jpg">
+
 <h2>Toudou</h2>
-<p>Chat + Quartz rose</p>
-<div class="price">9€</div>
-<a class="buy" href="#">Stripe</a>
-<a class="buy" href="#">PayPal</a>
+
+<p class="desc">Chat + Quartz rose</p>
+
+<p class="story">
+
+Le chat avec sa douceur naturelle et ses câlins réconfortants nous rappelle l'importance de prendre soin de soi et des autres avec délicatesse.
+
+Le quartz rose diffuse une énergie apaisante qui ouvre le cœur.
+
+</p>
+
+<p class="highlight">
+Entoure toi de tendresse
+</p>
+
+<p class="price">9€</p>
+
+<div class="buttons">
+
+<a class="btn stripe" href="#">Stripe</a>
+
+<a class="btn paypal" href="#">PayPal</a>
+
+</div>
+
 </div>
 
 <div class="card">
+
 <img src="assets/images/abeillou.jpg">
+
 <h2>Abeillou</h2>
-<p>Abeille + Pierre de lave</p>
-<div class="price">9€</div>
-<a class="buy" href="#">Stripe</a>
-<a class="buy" href="#">PayPal</a>
+
+<p class="desc">Abeille + Pierre de lave</p>
+
+<p class="price">9€</p>
+
+<div class="buttons">
+
+<a class="btn stripe" href="#">Stripe</a>
+
+<a class="btn paypal" href="#">PayPal</a>
+
+</div>
+
 </div>
 
 <div class="card">
+
 <img src="assets/images/luckyyou.jpg">
+
 <h2>Luckyyou</h2>
-<p>Grenouille + Aventurine</p>
-<div class="price">9€</div>
-<a class="buy" href="#">Stripe</a>
-<a class="buy" href="#">PayPal</a>
+
+<p class="desc">Grenouille + Aventurine</p>
+
+<p class="price">9€</p>
+
+<div class="buttons">
+
+<a class="btn stripe" href="#">Stripe</a>
+
+<a class="btn paypal" href="#">PayPal</a>
+
+</div>
+
 </div>
 
 <div class="card">
+
 <img src="assets/images/courageou.jpg">
+
 <h2>Courageou</h2>
-<p>Tigre + Cornaline</p>
-<div class="price">9€</div>
-<a class="buy" href="#">Stripe</a>
-<a class="buy" href="#">PayPal</a>
+
+<p class="desc">Tigre + Cornaline</p>
+
+<p class="price">9€</p>
+
+<div class="buttons">
+
+<a class="btn stripe" href="#">Stripe</a>
+
+<a class="btn paypal" href="#">PayPal</a>
+
+</div>
+
 </div>
 
 <div class="card">
+
 <img src="assets/images/veillou.jpg">
+
 <h2>Veillou</h2>
-<p>Hibou + Oeil de tigre</p>
-<div class="price">9€</div>
-<a class="buy" href="#">Stripe</a>
-<a class="buy" href="#">PayPal</a>
+
+<p class="desc">Hibou + Œil de tigre</p>
+
+<p class="price">9€</p>
+
+<div class="buttons">
+
+<a class="btn stripe" href="#">Stripe</a>
+
+<a class="btn paypal" href="#">PayPal</a>
+
+</div>
+
 </div>
 
 <div class="card">
+
 <img src="assets/images/calinou.jpg">
+
 <h2>Calinou</h2>
-<p>Koala + Améthyste</p>
-<div class="price">9€</div>
-<a class="buy" href="#">Stripe</a>
-<a class="buy" href="#">PayPal</a>
+
+<p class="desc">Koala + Améthyste</p>
+
+<p class="price">9€</p>
+
+<div class="buttons">
+
+<a class="btn stripe" href="#">Stripe</a>
+
+<a class="btn paypal" href="#">PayPal</a>
+
+</div>
+
 </div>
 
 <div class="card">
+
 <img src="assets/images/tranquilou.jpg">
+
 <h2>Tranquilou</h2>
-<p>Éléphant + Sodalite</p>
-<div class="price">9€</div>
-<a class="buy" href="#">Stripe</a>
-<a class="buy" href="#">PayPal</a>
+
+<p class="desc">Éléphant + Sodalite</p>
+
+<p class="price">9€</p>
+
+<div class="buttons">
+
+<a class="btn stripe" href="#">Stripe</a>
+
+<a class="btn paypal" href="#">PayPal</a>
+
+</div>
+
 </div>
 
 <div class="card">
+
 <img src="assets/images/bambou.jpg">
+
 <h2>Bambou</h2>
-<p>Panda + Howlite</p>
-<div class="price">9€</div>
-<a class="buy" href="#">Stripe</a>
-<a class="buy" href="#">PayPal</a>
+
+<p class="desc">Panda + Howlite</p>
+
+<p class="price">9€</p>
+
+<div class="buttons">
+
+<a class="btn stripe" href="#">Stripe</a>
+
+<a class="btn paypal" href="#">PayPal</a>
+
+</div>
+
 </div>
 
 </section>
@@ -183,4 +342,5 @@ Ils sont imaginés pour glisser un peu de magie, de douceur et de poésie dans l
 </footer>
 
 </body>
+
 </html>
