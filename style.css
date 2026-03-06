@@ -24,228 +24,128 @@ h1{
   color:#555;
   line-height:1.6;
 }
-
-/* → Grille produits */
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:40px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+/* → Grille produits responsive */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cartes par ligne sur grand écran */
+  gap: 30px;
 }
 
-/* → Cartes produits */
-.card{
-  background:white;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  padding:20px;
-  text-align:center;
-  transition:0.3s;
+/* Cartes produits */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
 }
 
-.card:hover{
-  transform:translateY(-5px);
+.card:hover {
+  transform: translateY(-5px);
 }
 
-/* → Images uniformes et responsive */
+/* Images uniformes et nettes */
 .card img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4/3;     /* rectangle sur desktop */
-  object-fit: cover;     /* recadrage propre */
+  height: 200px;        /* hauteur fixe pour uniformité */
+  object-fit: cover;    /* recadrage propre */
   border-radius: 10px;
   display: block;
 }
 
-/* → Titres, description, story */
-.card h3{
-  margin-top:15px;
-  font-size:24px;
+/* Titres et texte */
+.card h3 {
+  margin-top: 15px;
+  font-size: 24px;
 }
 
-.desc{
-  color:#666;
-  font-size:15px;
+.desc {
+  color: #666;
+  font-size: 15px;
 }
 
-.story{
-  margin-top:10px;
-  font-size:14px;
-  line-height:1.5;
-  color:#666;
+.story {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
 }
 
-.highlight{
-  font-size:18px;
-  font-weight:bold;
-  margin-top:10px;
-  color:#ff5a8a;
+.highlight {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #ff5a8a;
 }
 
-.price{
-  font-size:26px;
-  font-weight:bold;
-  margin-top:10px;
+.price {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-.buttons{
-  margin-top:15px;
+/* Boutons */
+.buttons {
+  margin-top: 15px;
 }
 
-.btn{
-  display:inline-block;
-  padding:12px 20px;
-  margin:5px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
-  color:white;
-  transition:0.2s;
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: 0.2s;
+  background: #635bff; /* couleur ajout panier cohérente */
 }
 
-.btn:hover{
-  opacity:0.9;
-  transform:translateY(-2px);
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
-.stripe{
-  background:#635bff;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  margin-top: 60px;
+  color: #777;
 }
 
-.paypal{
-  background:#0070ba;
-}
-
-/* → Footer */
-footer{
-  text-align:center;
-  padding:40px;
-  margin-top:60px;
-  color:#777;
-}
-
-/* → Grille large écran */
-@media (min-width:1600px){
-  .container{
-    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+/* Responsive tablettes et mobiles */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne */
   }
 }
 
-/* → Responsive pour mobile */
-@media (max-width:600px){
-  .container{
-    grid-template-columns: 1fr;  /* une seule colonne */
-    padding:20px;
-    gap:20px;
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr; /* 1 carte par ligne */
+    padding: 20px;
+    gap: 20px;
   }
 
-  .card img{
-    aspect-ratio:1/1;   /* carré sur mobile */
+  .card img {
+    height: 180px; /* réduire un peu la hauteur sur mobile */
   }
 
-  header h1{
-    font-size:48px;    /* titre plus petit */
+  header h1 {
+    font-size: 48px;
   }
 
-  .subtitle{
-    font-size:18px;
+  .subtitle {
+    font-size: 18px;
   }
 }
 
-/* → Checkout / formulaire paiement */
-.checkout{
-  max-width:600px;
-  margin:40px auto;
-  padding:20px;
-  background:white;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.checkout h1{
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.checkout-form label{
-  display:block;
-  margin:10px 0 5px;
-  font-weight:bold;
-}
-
-.checkout-form input{
-  width:100%;
-  padding:10px;
-  margin-bottom:15px;
-  border-radius:6px;
-  border:1px solid #ccc;
-  font-size:16px;
-}
-
-.checkout-buttons{
-  text-align:center;
-  margin-top:20px;
-}
-
-.checkout-buttons .btn{
-  width:45%;
-  margin:5px;
-  font-size:16px;
-}
-
-/* → Navigation principale */
-.main-nav{
-  background:#fff;
-  padding:15px 20px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.1);
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.main-nav ul{
-  display:flex;
-  justify-content:center;
-  list-style:none;
-  margin:0;
-  padding:0;
-  gap:30px;
-}
-
-.main-nav ul li a{
-  text-decoration:none;
-  color:#333;
-  font-weight:bold;
-  font-size:16px;
-  transition:0.3s;
-}
-
-.main-nav ul li a:hover{
-  color:#635bff;
-}
-
-/* → Panier */
-.cart-icon{
-  position:absolute;
-  top:20px;
-  right:20px;
-  font-size:24px;
-  cursor:pointer;
-}
-
-#cart-count{
-  background:#ff5a8a;
-  color:white;
-  border-radius:50%;
-  padding:2px 6px;
-  font-size:14px;
-  vertical-align:top;
-  margin-left:5px;
-}
-</style>
-/* Panier */
+/* → Panier sur la droite */
 .cart-icon {
   position: fixed;
   top: 20px;
@@ -253,11 +153,11 @@ footer{
   font-size: 28px;
   cursor: pointer;
   z-index: 1001;
-  color: #ff5a8a; /* couleur icône cohérente avec ton site */
+  color: #ff5a8a; /* couleur cohérente */
 }
 
 #cart-count {
-  background: #635bff; /* couleur compteur */
+  background: #635bff;
   color: white;
   border-radius: 50%;
   padding: 2px 6px;
@@ -328,7 +228,7 @@ footer{
 }
 
 .checkout-btn {
-  background: #635bff; /* couleur bouton cohérente */
+  background: #635bff;
   color: white;
   width: 100%;
   padding: 12px;
