@@ -194,7 +194,25 @@ Les Poutchou ce sont des petits grigris porte-bonheur. Ils sont imaginés pour g
 © Les Poutchou
 
 </footer>
+<script>
+let cart = [];
+const cartCount = document.getElementById('cart-count');
 
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', () => {
+    const name = button.getAttribute('data-name');
+    const price = parseFloat(button.getAttribute('data-price'));
+
+    // ajouter au panier
+    cart.push({name, price});
+    
+    // mettre à jour compteur
+    cartCount.textContent = cart.length;
+
+    alert(name + ' ajouté au panier !');
+  });
+});
+</script>
 </body>
 
 </html>
