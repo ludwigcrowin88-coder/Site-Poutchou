@@ -2,66 +2,73 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paiement et Livraison - Les Poutchou</title>
+  <title>Paiement - Les Poutchou</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-  <h1>Les Poutchou - Paiement et Livraison</h1>
-  <p class="subtitle">Complète ton achat en toute sécurité</p>
-</header>
+<h1>Paiement & Livraison</h1>
 
-<section class="checkout">
-  <h1>Paiement et Livraison</h1>
+<!-- ÉTAPE 1 : INFORMATIONS CLIENT -->
+<div class="step" id="step1">
+  <h2>1. Informations de livraison</h2>
 
-  <form class="checkout-form" action="#" method="POST">
-    <fieldset>
-      <legend>Informations de livraison</legend>
-      <label for="nom">Nom complet</label>
-      <input type="text" id="nom" name="nom" required>
+  <form id="form-info">
+    <label>Nom complet</label>
+    <input type="text" id="fullname" required>
 
-      <label for="adresse">Adresse</label>
-      <input type="text" id="adresse" name="adresse" required>
+    <label>Email</label>
+    <input type="email" id="email" required>
 
-      <label for="ville">Ville</label>
-      <input type="text" id="ville" name="ville" required>
+    <label>Téléphone</label>
+    <input type="tel" id="phone" required>
 
-      <label for="codepostal">Code postal</label>
-      <input type="text" id="codepostal" name="codepostal" required>
+    <label>Adresse</label>
+    <input type="text" id="address" required>
 
-      <label for="pays">Pays</label>
-      <input type="text" id="pays" name="pays" required>
-    </fieldset>
+    <label>Ville</label>
+    <input type="text" id="city" required>
 
-    <fieldset>
-      <legend>Paiement</legend>
-      <label for="carte">Numéro de carte</label>
-      <input type="text" id="carte" name="carte" required placeholder="1234 5678 9012 3456">
+    <label>Code postal</label>
+    <input type="text" id="zipcode" required>
 
-      <label for="date">Date d'expiration</label>
-      <input type="text" id="date" name="date" required placeholder="MM/AA">
+    <label>Pays</label>
+    <input type="text" id="country" required>
 
-      <label for="cvc">CVC</label>
-      <input type="text" id="cvc" name="cvc" required placeholder="123">
-    </fieldset>
-
-    <label>
-      <input type="checkbox" required>
-      J’accepte la <a href="politique.html" target="_blank">politique de confidentialité</a> et les conditions de vente.
-    </label>
-
-    <div class="checkout-buttons">
-      <button type="submit" class="btn stripe">Payer avec Stripe</button>
-      <button type="submit" class="btn paypal">Payer avec PayPal</button>
-    </div>
+    <button type="button" id="to-step2">Continuer</button>
   </form>
-</section>
+</div>
 
-<footer>
-  © Les Poutchou
-</footer>
+<!-- ÉTAPE 2 : RÉCAPITULATIF -->
+<div class="step" id="step2" style="display:none;">
+  <h2>2. Récapitulatif de la commande</h2>
+
+  <div id="order-summary"></div>
+  <p>Total : <span id="order-total"></span> €</p>
+
+  <label class="rgpd">
+    <input type="checkbox" id="rgpd" required>
+    J’accepte la politique de confidentialité et les conditions de vente.
+  </label>
+
+  <button type="button" id="to-step3">Valider et continuer</button>
+</div>
+
+<!-- ÉTAPE 3 : PAIEMENT -->
+<div class="step" id="step3" style="display:none;">
+  <h2>3. Paiement</h2>
+
+  <p>Choisis ton mode de paiement :</p>
+
+  <button class="pay-btn" id="pay-card">Payer par carte</button>
+  <button class="pay-btn" id="pay-paypal">PayPal</button>
+  <button class="pay-btn" id="pay-stripe">Stripe</button>
+
+  <p style="margin-top:20px;">(Intégration technique à faire ensuite)</p>
+</div>
+
+<script src="checkout.js"></script>
 
 </body>
 </html>
