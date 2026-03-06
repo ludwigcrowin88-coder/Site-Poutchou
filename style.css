@@ -51,10 +51,9 @@ h1{
 /* Images des cartes uniformes et responsive */
 .card img{
   width:100%;
-  aspect-ratio:1 / 1;       /* carré sur mobile */
-  object-fit:cover;
+  height:260px; /* hauteur fixe */
   border-radius:10px;
-  display:block;
+  object-fit:cover; /* remplissage en coupant si nécessaire */
 }
 
 @media (min-width:1024px){
