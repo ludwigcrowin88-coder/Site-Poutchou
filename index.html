@@ -1,298 +1,186 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Poutchou — Grigris porte-bonheur</title>
-  <meta name="description" content="Poutchous : petits grigris artisanaux associant animal totem et pierre naturelle. 8 modèles, 9€ pièce. Paiement sécurisé." />
-  <style>
-    /* ========== Reset léger ========== */
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; height: 100%; }
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #222; background: #fbfbfb; line-height: 1.45; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* ========== Layout ========== */
-    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-    header.site-hero {
-      background: linear-gradient(180deg, #f7faf8 0%, #ffffff 60%);
-      padding: 36px 20px;
-      border-bottom: 1px solid #eee;
-      text-align: center;
-    }
-    header h1 { margin: 0 0 8px; font-size: 28px; color: #214b3f; }
-    header p.lead { margin: 0 auto; max-width: 760px; color: #456a5d; }
+<title>Les Poutchou</title>
 
-    /* ========== Product grid ========== */
-    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 28px; }
-    .card {
-      background: #fff;
-      border: 1px solid #ececec;
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform .18s ease, box-shadow .18s ease;
-      box-shadow: 0 2px 8px rgba(30,30,30,0.03);
-    }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(30,30,30,0.06); }
+<style>
 
-    .card .thumb { width: 100%; height: 0; padding-bottom: 75%; position: relative; background: #f2f2f2; }
-    .card .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#f9f9f9;
+margin:0;
+padding:0;
+text-align:center;
+}
 
-    .card .body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-    .card h3 { margin: 0; font-size: 18px; color: #223; }
-    .meta { color: #616161; font-size: 14px; }
-    .price { margin-top: 6px; font-weight: 700; color: #222; font-size: 16px; }
+header{
+padding:60px 20px;
+}
 
-    .actions { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; }
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      padding: 10px 14px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 14px;
-      text-align: center;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-stripe { background: #6772e5; color: #fff; }
-    .btn-paypal { background: #ffc439; color: #111; }
-    .btn-ghost { background: transparent; color: #2b6b5a; border: 1px solid #dcefe6; }
+h1{
+font-size:60px;
+margin-bottom:10px;
+}
 
-    /* ========== Expanded product detail (hidden by default) ========== */
-    .detail {
-      display: none;
-      margin-top: 16px;
-      padding: 14px;
-      border-radius: 8px;
-      border: 1px solid #eee;
-      background: #fff;
-    }
-    .detail.open { display: block; }
+.subtitle{
+font-size:20px;
+color:#555;
+max-width:600px;
+margin:auto;
+}
 
-    .detail p { margin: 0 0 8px; color: #444; }
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:40px;
+max-width:1200px;
+margin:auto;
+}
 
-    .highlight { font-size: 20px; font-weight: 800; color: #c84b70; margin-top: 10px; }
+.card{
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 
-    /* ========== Info & footer ========== */
-    .info {
-      margin-top: 28px;
-      display: grid;
-      gap: 18px;
-      grid-template-columns: 1fr;
-    }
-    .reassure { background: #fff; padding: 14px; border-radius: 8px; border: 1px solid #eef6f1; color: #344; }
-    footer { margin: 28px 0 60px; text-align: center; color: #888; font-size: 14px; }
+.card img{
+width:100%;
+border-radius:10px;
+}
 
-    /* ========== Responsive small ========== */
-    @media (max-width: 520px) {
-      header h1 { font-size: 22px; }
-      .btn { width: 100%; }
-      .actions { flex-direction: column; }
-    }
-  </style>
+.card h2{
+margin-top:10px;
+}
+
+.price{
+font-size:22px;
+font-weight:bold;
+margin:10px 0;
+}
+
+.buy{
+display:inline-block;
+padding:10px 20px;
+background:#ff7a9c;
+color:white;
+text-decoration:none;
+border-radius:5px;
+margin:5px;
+}
+
+.buy:hover{
+background:#ff4f7a;
+}
+
+footer{
+margin-top:50px;
+padding:30px;
+color:#777;
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <header class="site-hero">
-    <div class="container">
-      <h1>Poutchous — Grigris de sac artisanaux</h1>
-      <p class="lead">Des petits compagnons faits main, animaux totem + pierre naturelle. 8 modèles — 9 € l’unité — envoi soigné France & international.</p>
-    </div>
-  </header>
+<header>
 
-  <main class="container" id="main">
-    <!-- ========== Product grid ========== -->
-    <section aria-label="Liste des produits">
-      <div class="grid">
+<h1>LES POUTCHOU</h1>
 
-        <!-- Toudou -->
-        <article class="card" id="p-toudou" data-name="toudou">
-          <div class="thumb">
-            <!-- Chemin : assets/images/toudou.jpg -->
-            <img src="assets/images/toudou.jpg" alt="Poutchou Toudou — Chat, Quartz rose">
-          </div>
-          <div class="body">
-            <h3>Poutchou Toudou</h3>
-            <div class="meta">Animal : Chat · Pierre : Quartz rose</div>
-            <div class="price">9 €</div>
+<p class="subtitle">
+Les Poutchou ce sont des petits grigris porte-bonheur.<br>
+Ils sont imaginés pour glisser un peu de magie, de douceur et de poésie dans le quotidien, fabriqués à la main.
+</p>
 
-            <div class="actions">
-              <!-- Remplacez les URLs ci-dessous par vos Payment Links Stripe / PayPal -->
-              <a class="btn btn-stripe" href="STRIPE_LINK_TOUDOU" target="_blank" rel="noopener noreferrer">Payer avec Stripe</a>
-              <a class="btn btn-paypal" href="PAYPAL_LINK_TOUDOU" target="_blank" rel="noopener noreferrer">Payer avec PayPal</a>
-              <button class="btn btn-ghost" data-toggle="detail" data-target="detail-toudou">Voir l'histoire</button>
-            </div>
+</header>
 
-            <div id="detail-toudou" class="detail" aria-hidden="true">
-              <!-- Histoire demandée (formatée, texte important en gras et grand) -->
-              <p>Le chat avec sa douceur naturelle et ses câlins réconfortants nous rappelle l'importance de prendre soin de soi et des autres avec délicatesse.</p>
-              <p>Le quartz rose, pierre de l'amour universel, diffuse une énergie apaisante et bienveillante, qui ouvre le cœur et invite à la tendresse.</p>
-              <p>Ce grigri est là pour t'accompagner chaque jour, comme un petit rappel que la douceur est une force et que l'amour commence toujours par soi. Porte-le ou offre-le comme un geste d'affection et laisse son énergie envelopper ton cœur de chaleur et de tendresse.</p>
+<section class="container">
 
-              <p class="highlight">Entoure toi de tendresse.</p>
-            </div>
-          </div>
-        </article>
+<div class="card">
+<img src="assets/images/toudou.jpg">
+<h2>Toudou</h2>
+<p>Chat + Quartz rose</p>
+<div class="price">9€</div>
+<a class="buy" href="#">Stripe</a>
+<a class="buy" href="#">PayPal</a>
+</div>
 
-        <!-- Abeillou -->
-        <article class="card" id="p-abeillou" data-name="abeillou">
-          <div class="thumb"><img src="assets/images/abeillou.jpg" alt="Poutchou Abeillou — Abeille, Pierre de lave"></div>
-          <div class="body">
-            <h3>Poutchou Abeillou</h3>
-            <div class="meta">Animal : Abeille · Pierre : Pierre de lave</div>
-            <div class="price">9 €</div>
-            <div class="actions">
-              <a class="btn btn-stripe" href="STRIPE_LINK_ABEILLOU" target="_blank" rel="noopener noreferrer">Payer avec Stripe</a>
-              <a class="btn btn-paypal" href="PAYPAL_LINK_ABEILLOU" target="_blank" rel="noopener noreferrer">Payer avec PayPal</a>
-              <button class="btn btn-ghost" data-toggle="detail" data-target="detail-abeillou">Voir l'histoire</button>
-            </div>
-            <div id="detail-abeillou" class="detail" aria-hidden="true">
-              <p>La petite abeille invite au travail doux, à la communauté et au partage. La pierre de lave apporte enracinement et force.</p>
-            </div>
-          </div>
-        </article>
+<div class="card">
+<img src="assets/images/abeillou.jpg">
+<h2>Abeillou</h2>
+<p>Abeille + Pierre de lave</p>
+<div class="price">9€</div>
+<a class="buy" href="#">Stripe</a>
+<a class="buy" href="#">PayPal</a>
+</div>
 
-        <!-- Luckyyou -->
-        <article class="card" id="p-luckyyou" data-name="luckyyou">
-          <div class="thumb"><img src="assets/images/luckyyou.jpg" alt="Poutchou Luckyyou — Grenouille, Aventurine verte"></div>
-          <div class="body">
-            <h3>Poutchou Luckyyou</h3>
-            <div class="meta">Animal : Grenouille · Pierre : Aventurine verte</div>
-            <div class="price">9 €</div>
-            <div class="actions">
-              <a class="btn btn-stripe" href="STRIPE_LINK_LUCKYYOU" target="_blank" rel="noopener noreferrer">Payer avec Stripe</a>
-              <a class="btn btn-paypal" href="PAYPAL_LINK_LUCKYYOU" target="_blank" rel="noopener noreferrer">Payer avec PayPal</a>
-              <button class="btn btn-ghost" data-toggle="detail" data-target="detail-luckyyou">Voir l'histoire</button>
-            </div>
-            <div id="detail-luckyyou" class="detail" aria-hidden="true">
-              <p>La grenouille symbolise la transformation et l'aventurine attire chance et optimisme.</p>
-            </div>
-          </div>
-        </article>
+<div class="card">
+<img src="assets/images/luckyyou.jpg">
+<h2>Luckyyou</h2>
+<p>Grenouille + Aventurine</p>
+<div class="price">9€</div>
+<a class="buy" href="#">Stripe</a>
+<a class="buy" href="#">PayPal</a>
+</div>
 
-        <!-- Courageou -->
-        <article class="card" id="p-courageou" data-name="courageou">
-          <div class="thumb"><img src="assets/images/courageou.jpg" alt="Poutchou Courageou — Tigre, Cornaline"></div>
-          <div class="body">
-            <h3>Poutchou Courageou</h3>
-            <div class="meta">Animal : Tigre · Pierre : Cornaline</div>
-            <div class="price">9 €</div>
-            <div class="actions">
-              <a class="btn btn-stripe" href="STRIPE_LINK_COURAGEOU" target="_blank" rel="noopener noreferrer">Payer avec Stripe</a>
-              <a class="btn btn-paypal" href="PAYPAL_LINK_COURAGEOU" target="_blank" rel="noopener noreferrer">Payer avec PayPal</a>
-              <button class="btn btn-ghost" data-toggle="detail" data-target="detail-courageou">Voir l'histoire</button>
-            </div>
-            <div id="detail-courageou" class="detail" aria-hidden="true">
-              <p>Force, confiance et énergie — le tigre + cornaline.</p>
-            </div>
-          </div>
-        </article>
+<div class="card">
+<img src="assets/images/courageou.jpg">
+<h2>Courageou</h2>
+<p>Tigre + Cornaline</p>
+<div class="price">9€</div>
+<a class="buy" href="#">Stripe</a>
+<a class="buy" href="#">PayPal</a>
+</div>
 
-        <!-- Veillou -->
-        <article class="card" id="p-veillou" data-name="veillou">
-          <div class="thumb"><img src="assets/images/veillou.jpg" alt="Poutchou Veillou — Hibou, Oeil de tigre"></div>
-          <div class="body">
-            <h3>Poutchou Veillou</h3>
-            <div class="meta">Animal : Hibou · Pierre : Œil de tigre</div>
-            <div class="price">9 €</div>
-            <div class="actions">
-              <a class="btn btn-stripe" href="STRIPE_LINK_VEILLOU" target="_blank" rel="noopener noreferrer">Payer avec Stripe</a>
-              <a class="btn btn-paypal" href="PAYPAL_LINK_VEILLOU" target="_blank" rel="noopener noreferrer">Payer avec PayPal</a>
-              <button class="btn btn-ghost" data-toggle="detail" data-target="detail-veillou">Voir l'histoire</button>
-            </div>
-            <div id="detail-veillou" class="detail" aria-hidden="true">
-              <p>Sagesse et protection — hibou et œil de tigre.</p>
-            </div>
-          </div>
-        </article>
+<div class="card">
+<img src="assets/images/veillou.jpg">
+<h2>Veillou</h2>
+<p>Hibou + Oeil de tigre</p>
+<div class="price">9€</div>
+<a class="buy" href="#">Stripe</a>
+<a class="buy" href="#">PayPal</a>
+</div>
 
-        <!-- Calinou -->
-        <article class="card" id="p-calinou" data-name="calinou">
-          <div class="thumb"><img src="assets/images/calinou.jpg" alt="Poutchou Calinou — Koala, Améthyste"></div>
-          <div class="body">
-            <h3>Poutchou Calinou</h3>
-            <div class="meta">Animal : Koala · Pierre : Améthyste</div>
-            <div class="price">9 €</div>
-            <div class="actions">
-              <a class="btn btn-stripe" href="STRIPE_LINK_CALINOU" target="_blank" rel="noopener noreferrer">Payer avec Stripe</a>
-              <a class="btn btn-paypal" href="PAYPAL_LINK_CALINOU" target="_blank" rel="noopener noreferrer">Payer avec PayPal</a>
-              <button class="btn btn-ghost" data-toggle="detail" data-target="detail-calinou">Voir l'histoire</button>
-            </div>
-            <div id="detail-calinou" class="detail" aria-hidden="true">
-              <p>Douceur, calme et bien-être — koala + améthyste.</p>
-            </div>
-          </div>
-        </article>
+<div class="card">
+<img src="assets/images/calinou.jpg">
+<h2>Calinou</h2>
+<p>Koala + Améthyste</p>
+<div class="price">9€</div>
+<a class="buy" href="#">Stripe</a>
+<a class="buy" href="#">PayPal</a>
+</div>
 
-        <!-- Tranquilou -->
-        <article class="card" id="p-tranquilou" data-name="tranquilou">
-          <div class="thumb"><img src="assets/images/tranquilou.jpg" alt="Poutchou Tranquilou — Éléphant, Sodalite"></div>
-          <div class="body">
-            <h3>Poutchou Tranquilou</h3>
-            <div class="meta">Animal : Éléphant · Pierre : Sodalite</div>
-            <div class="price">9 €</div>
-            <div class="actions">
-              <a class="btn btn-stripe" href="STRIPE_LINK_TRANQUILOU" target="_blank" rel="noopener noreferrer">Payer avec Stripe</a>
-              <a class="btn btn-paypal" href="PAYPAL_LINK_TRANQUILOU" target="_blank" rel="noopener noreferrer">Payer avec PayPal</a>
-              <button class="btn btn-ghost" data-toggle="detail" data-target="detail-tranquilou">Voir l'histoire</button>
-            </div>
-            <div id="detail-tranquilou" class="detail" aria-hidden="true">
-              <p>Sagesse, sérénité et mémoire — éléphant + sodalite.</p>
-            </div>
-          </div>
-        </article>
+<div class="card">
+<img src="assets/images/tranquilou.jpg">
+<h2>Tranquilou</h2>
+<p>Éléphant + Sodalite</p>
+<div class="price">9€</div>
+<a class="buy" href="#">Stripe</a>
+<a class="buy" href="#">PayPal</a>
+</div>
 
-        <!-- Bambou -->
-        <article class="card" id="p-bambou" data-name="bambou">
-          <div class="thumb"><img src="assets/images/bambou.jpg" alt="Poutchou Bambou — Panda, Howlite"></div>
-          <div class="body">
-            <h3>Poutchou Bambou</h3>
-            <div class="meta">Animal : Panda · Pierre : Howlite</div>
-            <div class="price">9 €</div>
-            <div class="actions">
-              <a class="btn btn-stripe" href="STRIPE_LINK_BAMBOU" target="_blank" rel="noopener noreferrer">Payer avec Stripe</a>
-              <a class="btn btn-paypal" href="PAYPAL_LINK_BAMBOU" target="_blank" rel="noopener noreferrer">Payer avec PayPal</a>
-              <button class="btn btn-ghost" data-toggle="detail" data-target="detail-bambou">Voir l'histoire</button>
-            </div>
-            <div id="detail-bambou" class="detail" aria-hidden="true">
-              <p>Douceur et équilibre — panda + howlite.</p>
-            </div>
-          </div>
-        </article>
+<div class="card">
+<img src="assets/images/bambou.jpg">
+<h2>Bambou</h2>
+<p>Panda + Howlite</p>
+<div class="price">9€</div>
+<a class="buy" href="#">Stripe</a>
+<a class="buy" href="#">PayPal</a>
+</div>
 
-      </div>
-    </section>
+</section>
 
-    <!-- ========== Info / livraison / réassurance ========== -->
-    <section class="info" aria-label="Informations livraison et réassurance">
-      <div class="reassure">
-        <strong>Livraison :</strong> Envoi soigné en lettre suivie (France) ou Colissimo / International (sur devis).<br>
-        <strong>Paiement :</strong> Paiement sécurisé via Stripe ou PayPal. Les liens de paiement ouvrent dans une nouvelle fenêtre.<br>
-        <strong>Artisanal :</strong> Fait main dans notre atelier. Chaque pièce est unique.
-      </div>
-    </section>
+<footer>
 
-    <footer>
-      © Boutique Ananta — Bijoux Pierres Minéraux — Fabriqué artisanalement
-    </footer>
-  </main>
+© Les Poutchou
 
-  <script>
-    // Petit JS pour ouvrir/fermer les détails produit
-    document.addEventListener('click', function(e) {
-      var btn = e.target.closest('[data-toggle="detail"]');
-      if (btn) {
-        var targetId = btn.getAttribute('data-target');
-        var detail = document.getElementById(targetId);
-        if (!detail) return;
-        var opened = detail.classList.toggle('open');
-        detail.setAttribute('aria-hidden', !opened);
-        // Scroll léger si on ouvre
-        if (opened) detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
-  </script>
+</footer>
+
 </body>
 </html>
