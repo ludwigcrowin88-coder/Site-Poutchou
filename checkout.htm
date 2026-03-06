@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement et Livraison - Les Poutchou</title>
+  <link rel="stylesheet" href="style.css"> <!-- ton CSS principal -->
+</head>
+<body>
+
+<header>
+  <h1>Les Poutchou - Paiement et Livraison</h1>
+  <p class="subtitle">Complète ton achat en toute sécurité</p>
+</header>
+
+<section class="checkout">
+  <h1>Paiement et Livraison</h1>
+
+  <!-- Formulaire -->
+  <form class="checkout-form" action="#" method="POST">
+    <fieldset>
+      <legend>Informations de livraison</legend>
+      <label for="nom">Nom complet</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="adresse">Adresse</label>
+      <input type="text" id="adresse" name="adresse" required>
+
+      <label for="ville">Ville</label>
+      <input type="text" id="ville" name="ville" required>
+
+      <label for="codepostal">Code postal</label>
+      <input type="text" id="codepostal" name="codepostal" required>
+
+      <label for="pays">Pays</label>
+      <input type="text" id="pays" name="pays" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Paiement</legend>
+      <label for="carte">Numéro de carte</label>
+      <input type="text" id="carte" name="carte" required placeholder="1234 5678 9012 3456">
+
+      <label for="date">Date d'expiration</label>
+      <input type="text" id="date" name="date" required placeholder="MM/AA">
+
+      <label for="cvc">CVC</label>
+      <input type="text" id="cvc" name="cvc" required placeholder="123">
+    </fieldset>
+
+    <label>
+      <input type="checkbox" required>
+      J’accepte la <a href="politique.html" target="_blank">politique de confidentialité</a> et les conditions de vente.
+    </label>
+
+    <div class="checkout-buttons">
+      <button type="submit" class="btn stripe">Payer avec Stripe</button>
+      <button type="submit" class="btn paypal">Payer avec PayPal</button>
+    </div>
+  </form>
+</section>
+
+<footer>
+  © Les Poutchou
+</footer>
+
+</body>
+</html>
