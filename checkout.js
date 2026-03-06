@@ -39,3 +39,21 @@ function renderSummary() {
 
   total.textContent = sum;
 }
+// Étape 1 → Étape 2
+document.getElementById("to-step2").addEventListener("click", () => {
+
+  // Vérification des champs obligatoires
+  const requiredFields = ["fullname", "email", "phone", "address", "city", "zipcode", "country"];
+  for (let field of requiredFields) {
+    if (document.getElementById(field).value.trim() === "") {
+      alert("Merci de remplir tous les champs.");
+      return;
+    }
+  }
+
+  // Passage à l'étape suivante
+  document.getElementById("step1").style.display = "none";
+  document.getElementById("step2").style.display = "block";
+
+  renderSummary();
+});
