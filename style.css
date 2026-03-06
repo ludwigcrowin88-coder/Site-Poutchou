@@ -135,3 +135,42 @@ footer{
 }
   
 </style>
+.checkout{
+  max-width:600px;
+  margin:40px auto;
+  padding:20px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.checkout h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.checkout-form label{
+  display:block;
+  margin:10px 0 5px;
+  font-weight:bold;
+}
+
+.checkout-form input{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+.checkout-buttons{
+  text-align:center;
+  margin-top:20px;
+}
+
+.checkout-buttons .btn{
+  width:45%;
+  margin:5px;
+  font-size:16px;
+}
