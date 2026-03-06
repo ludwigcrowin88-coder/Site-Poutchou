@@ -7,7 +7,8 @@
 <title>Les Poutchou</title>
 
 <style>
-body{
+
+  body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
   background:#fafafa;
@@ -40,6 +41,8 @@ h1{
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
 }
+
+/* Cartes */
 .card{
   background:white;
   border-radius:12px;
@@ -53,9 +56,10 @@ h1{
   transform:translateY(-5px);
 }
 
+/* Images des cartes uniformes et responsive */
 .card img{
   width:100%;
-  aspect-ratio:1 / 1;
+  aspect-ratio:1 / 1;       /* carré sur mobile */
   object-fit:cover;
   border-radius:10px;
   display:block;
@@ -63,7 +67,7 @@ h1{
 
 @media (min-width:1024px){
   .card img{
-    aspect-ratio:4 / 3;
+    aspect-ratio:4 / 3;     /* rectangle sur grand écran */
   }
 }
 
@@ -71,6 +75,7 @@ h1{
   margin-top:15px;
   font-size:24px;
 }
+
 .desc{
   color:#666;
   font-size:15px;
@@ -136,6 +141,7 @@ footer{
     grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
   }
 }
+  
 </style>
 
 </head>
