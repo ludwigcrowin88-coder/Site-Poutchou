@@ -55,3 +55,27 @@ function renderSummary() {
 
   total.textContent = sum;
 }
+// Stripe
+const stripe = Stripe("TA_CLE_PUBLIQUE_STRIPE_ICI");
+
+document.getElementById("pay-stripe").addEventListener("click", async () => {
+
+  // Calcul du total
+  let total = 0;
+  cart.forEach(item => total += Number(item.price));
+
+  // Appel à Stripe Checkout
+  const response = await fetch("https://stripe-checkout-poutchou.vercel.app/create-checkout-session", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      amount: total * 100, // en centimes
+      items: cart
+    })
+  });
+
+  const session = await response.json();
+
+  // Redirection vers Stripe
+  stripe.redirectToCheckout({ sessionId: session.id });
+});
