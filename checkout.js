@@ -3,8 +3,20 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Étape 1 → Étape 2
 document.getElementById("to-step2").addEventListener("click", () => {
+
+  const fields = ["fullname", "email", "phone", "address", "city", "zipcode", "country"];
+  for (let f of fields) {
+    if (document.getElementById(f).value.trim() === "") {
+      alert("Merci de remplir tous les champs.");
+      return;
+    }
+  }
+
   document.getElementById("step1").style.display = "none";
   document.getElementById("step2").style.display = "block";
+
+  document.getElementById("circle1").classList.remove("active");
+  document.getElementById("circle2").classList.add("active");
 
   renderSummary();
 });
@@ -18,9 +30,12 @@ document.getElementById("to-step3").addEventListener("click", () => {
 
   document.getElementById("step2").style.display = "none";
   document.getElementById("step3").style.display = "block";
+
+  document.getElementById("circle2").classList.remove("active");
+  document.getElementById("circle3").classList.add("active");
 });
 
-// Affichage du récapitulatif
+// Récapitulatif
 function renderSummary() {
   const summary = document.getElementById("order-summary");
   const total = document.getElementById("order-total");
@@ -32,28 +47,11 @@ function renderSummary() {
     sum += Number(item.price);
     summary.innerHTML += `
       <div class="summary-item">
-        <strong>${item.name}</strong> - ${item.price}€
+        <span>${item.name}</span>
+        <span>${item.price}€</span>
       </div>
     `;
   });
 
   total.textContent = sum;
 }
-// Étape 1 → Étape 2
-document.getElementById("to-step2").addEventListener("click", () => {
-
-  // Vérification des champs obligatoires
-  const requiredFields = ["fullname", "email", "phone", "address", "city", "zipcode", "country"];
-  for (let field of requiredFields) {
-    if (document.getElementById(field).value.trim() === "") {
-      alert("Merci de remplir tous les champs.");
-      return;
-    }
-  }
-
-  // Passage à l'étape suivante
-  document.getElementById("step1").style.display = "none";
-  document.getElementById("step2").style.display = "block";
-
-  renderSummary();
-});
