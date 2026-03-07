@@ -2,73 +2,87 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Paiement - Les Poutchou</title>
+  <title>Paiement & Livraison - Poutchou</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="checkout-body">
 
-<h1>Paiement & Livraison</h1>
+  <div class="checkout-container">
 
-<!-- ÉTAPE 1 : INFORMATIONS CLIENT -->
-<div class="step" id="step1">
-  <h2>1. Informations de livraison</h2>
+    <!-- Barre de progression -->
+    <div class="steps-progress">
+      <div class="step-circle active" id="circle1">1</div>
+      <div class="step-line"></div>
+      <div class="step-circle" id="circle2">2</div>
+      <div class="step-line"></div>
+      <div class="step-circle" id="circle3">3</div>
+    </div>
 
-  <form id="form-info">
-    <label>Nom complet</label>
-    <input type="text" id="fullname" required>
+    <!-- ÉTAPE 1 : INFORMATIONS CLIENT -->
+    <div class="step-card" id="step1">
+      <h2>Informations de livraison</h2>
 
-    <label>Email</label>
-    <input type="email" id="email" required>
+      <form id="form-info">
+        <label>Nom complet</label>
+        <input type="text" id="fullname" required>
 
-    <label>Téléphone</label>
-    <input type="tel" id="phone" required>
+        <label>Email</label>
+        <input type="email" id="email" required>
 
-    <label>Adresse</label>
-    <input type="text" id="address" required>
+        <label>Téléphone</label>
+        <input type="tel" id="phone" required>
 
-    <label>Ville</label>
-    <input type="text" id="city" required>
+        <label>Adresse</label>
+        <input type="text" id="address" required>
 
-    <label>Code postal</label>
-    <input type="text" id="zipcode" required>
+        <label>Ville</label>
+        <input type="text" id="city" required>
 
-    <label>Pays</label>
-    <input type="text" id="country" required>
+        <label>Code postal</label>
+        <input type="text" id="zipcode" required>
 
-    <button type="button" id="to-step2">Continuer</button>
-  </form>
-</div>
+        <label>Pays</label>
+        <input type="text" id="country" required>
 
-<!-- ÉTAPE 2 : RÉCAPITULATIF -->
-<div class="step" id="step2" style="display:none;">
-  <h2>2. Récapitulatif de la commande</h2>
+        <button type="button" id="to-step2" class="btn-primary">Continuer</button>
+      </form>
+    </div>
 
-  <div id="order-summary"></div>
-  <p>Total : <span id="order-total"></span> €</p>
+    <!-- ÉTAPE 2 : RÉCAPITULATIF -->
+    <div class="step-card" id="step2" style="display:none;">
+      <h2>Récapitulatif de la commande</h2>
 
-  <label class="rgpd">
-    <input type="checkbox" id="rgpd" required>
-    J’accepte la politique de confidentialité et les conditions de vente.
-  </label>
+      <div id="order-summary" class="summary-list"></div>
 
-  <button type="button" id="to-step3">Valider et continuer</button>
-</div>
+      <div class="summary-total">
+        Total : <span id="order-total"></span> €
+      </div>
 
-<!-- ÉTAPE 3 : PAIEMENT -->
-<div class="step" id="step3" style="display:none;">
-  <h2>3. Paiement</h2>
+      <label class="rgpd">
+        <input type="checkbox" id="rgpd">
+        J’accepte la politique de confidentialité et les conditions de vente.
+      </label>
 
-  <p>Choisis ton mode de paiement :</p>
+      <button type="button" id="to-step3" class="btn-primary">Valider et continuer</button>
+    </div>
 
-  <button class="pay-btn" id="pay-card">Payer par carte</button>
-  <button class="pay-btn" id="pay-paypal">PayPal</button>
-  <button class="pay-btn" id="pay-stripe">Stripe</button>
+    <!-- ÉTAPE 3 : PAIEMENT -->
+    <div class="step-card" id="step3" style="display:none;">
+      <h2>Paiement</h2>
 
-  <p style="margin-top:20px;">(Intégration technique à faire ensuite)</p>
-</div>
+      <p class="payment-text">Choisis ton mode de paiement :</p>
 
-<script src="checkout.js"></script>
+      <button class="btn-secondary" id="pay-card">Carte bancaire</button>
+      <button class="btn-secondary" id="pay-paypal">PayPal</button>
+      <button class="btn-secondary" id="pay-stripe">Stripe</button>
+
+      <p class="payment-note">L’intégration technique sera ajoutée ensuite.</p>
+    </div>
+
+  </div>
+
+  <script src="checkout.js"></script>
 
 </body>
 </html>
