@@ -2601,3 +2601,16 @@
     --header-gift-icon-color: #80FFF9;
     --home-bg-opacity: 1;
     scroll-behavior: auto;
+.highlight {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff5a8a;
+  background: #ffe4ef;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(255, 90, 138, 0.15);
+}
