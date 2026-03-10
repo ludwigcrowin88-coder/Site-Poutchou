@@ -2,19 +2,134 @@
 <!doctype html>
 <html lang="fr" class="dark">
   <head>
- 
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-NCCB99P9");
-    </script>
-    <!-- Conditionally load Rewardful for affiliate users only -->
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Poutchou</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1 class="logo">Les Poutchou</h1>
+        <div class="cart-icon" onclick="toggleCart()">🛒</div>
+    </header>
+
+    <!-- INTRO -->
+    <section class="intro">
+        <h2>Les Poutchou</h2>
+        <p>
+            Les Poutchou ce sont des petits grigris porte-bonheur.  
+            Ils sont imaginés pour glisser un peu de magie, de douceur et de poésie dans le quotidien,  
+            fabriqués à la main.
+        </p>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio-section">
+
+        <div class="portfolio-intro">
+            <h2>L’univers des Poutchou</h2>
+            <p>
+                Chaque Poutchou porte une symbolique unique : douceur, courage, chance ou protection.  
+                Ils sont fabriqués à la main avec soin, pour accompagner les moments importants et offrir  
+                un peu de poésie à ceux qui les portent.
+            </p>
+        </div>
+
+        <div class="portfolio-gallery">
+
+            <div class="portfolio-item">
+                <img src="images/toudou.jpg" alt="Toudou">
+                <h3>Toudou</h3>
+                <p>La douceur et la tendresse.</p>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="images/abeillou.jpg" alt="Abeillou">
+                <h3>Abeillou</h3>
+                <p>L’énergie et la joie.</p>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="images/luckyou.jpg" alt="Luckyou">
+                <h3>Luckyou</h3>
+                <p>La chance au quotidien.</p>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="images/courageou.jpg" alt="Courageou">
+                <h3>Courageou</h3>
+                <p>La force et la détermination.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUITS -->
+    <section class="products">
+        <h2>Nos Poutchou</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="images/toudou.jpg" alt="Toudou">
+                <h3>Toudou</h3>
+                <p>Le Poutchou de la douceur.</p>
+                <span class="price">12€</span>
+                <button onclick="addToCart('Toudou', 12)">Ajouter au panier</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/abeillou.jpg" alt="Abeillou">
+                <h3>Abeillou</h3>
+                <p>Le Poutchou de la joie.</p>
+                <span class="price">12€</span>
+                <button onclick="addToCart('Abeillou', 12)">Ajouter au panier</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/luckyou.jpg" alt="Luckyou">
+                <h3>Luckyou</h3>
+                <p>Le Poutchou de la chance.</p>
+                <span class="price">12€</span>
+                <button onclick="addToCart('Luckyou', 12)">Ajouter au panier</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/courageou.jpg" alt="Courageou">
+                <h3>Courageou</h3>
+                <p>Le Poutchou de la force.</p>
+                <span class="price">12€</span>
+                <button onclick="addToCart('Courageou', 12)">Ajouter au panier</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PANIER -->
+    <div id="cart-panel" class="cart-panel">
+        <h3>Votre panier</h3>
+        <div id="cart-items"></div>
+        <p>Total : <span id="cart-total">0</span> €</p>
+        <button onclick="goToCheckout()">Passer au paiement</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© Les Poutchou — Créations artisanales</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
     <script>
       (function () {
         // Helper to get cookie by name
