@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  
-      'tag
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Poutchou</title>
+
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --dark: #292F36;
+            --light: #F7FFF7;
+            --gray: #f4f4f4;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* TON CSS CONTINUE ICI… */
+    </style>
+</head>
+
+<body>
+
 <header>
-<h1>LES POUTCHOU</h1>
-<p class="subtitle">
-Les Poutchou ce sont des petits grigris porte-bonheur. Ils sont imaginés pour glisser un peu de magie, de douceur et de poésie dans le quotidien, fabriqués à la main.
-</p>
+    <h1>LES POUTCHOU</h1>
+    <p class="subtitle">
+        Les Poutchou ce sont des petits grigris porte-bonheur...
+    </p>
 </header>
 
 <div class="cart-icon">
@@ -21,236 +50,7 @@ Les Poutchou ce sont des petits grigris porte-bonheur. Ils sont imaginés pour g
   <button id="checkout-btn" class="btn checkout-btn">Passer au paiement</button>
 </div>
 
-  
-<div class="card">
-</body>
-</html>
-    
-        /* --- VARIABLES & RESET --- */
-        :root {
-            --primary: #FF6B6B; /* Rouge doux moderne */
-            --secondary: #4ECDC4; /* Turquoise */
-            --dark: #292F36;
-            --light: #F7FFF7;
-            --gray: #f4f4f4;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
-            --radius: 12px;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        /* --- UI COMPONENTS --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* --- HERO SECTION --- */
-        header {
-            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        header span { color: var(--primary); }
-
-        header p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 40px;
-        }
-
-        /* --- THE COLLECTION (FUNNEL STEP 1) --- */
-        .collection {
-            padding: 80px 0;
-            background-color: white;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            border: 2px solid transparent;
-            position: relative;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--secondary);
-        }
-
-        .card-img {
-            height: 200px;
-            background-color: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #ccc;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .card-story {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 15px;
-            height: 60px; /* Fixed height for alignment */
-            overflow: hidden;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        /* Tags colors */
-        .tag-red { background: #ffe0e0; color: var(--primary); }
-        .tag-blue { background: #e0f7fa; color: var(--secondary); }
-        .tag-green { background: #e8f5e9; color: #4caf50; }
-        .tag-purple { background: #f3e5f5; color: #9c27b0; }
-
-        /* --- ORDER FORM (FUNNEL STEP 2) --- */
-        .order-section {
-            padding: 80px 0;
-            background-color: var(--gray);
-        }
-
-        .form-box {
-            background: white;
-            padding: 40px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-
-        .selected-product-display {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--primary);
-            display: none; /* Hidden by default */
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 50px;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .grid { grid-template-columns: 1fr; }
-            .form-box { padding: 20px; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- HERO SECTION -->
-    <header>
-        <div class="container">
-            <h1>Le Poutchou<br> </h1>
-        </div>
-    </header>
+<!-- ICI tu continues ton contenu -->
 
     <!-- COLLECTION SECTION (THE FUNNEL) -->
     <section id="collection" class="collection">
