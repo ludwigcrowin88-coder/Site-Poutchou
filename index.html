@@ -1,57 +1,148 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les Poutchou</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Poutchou</title>
 
-    <style>
-        /* --- VARIABLES & RESET --- */
-        :root {
-            --primary: #FF6B6B;
-            --secondary: #4ECDC4;
-            --dark: #292F36;
-            --light: #F7FFF7;
-            --gray: #f4f4f4;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
-            --radius: 12px;
-        }
+<style>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+body{
+font-family:Arial;
+background:#F7FFF7;
+margin:0;
+text-align:center;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
+header{
+padding:40px;
+background:#FF6B6B;
+color:white;
+}
 
-        /* TON CSS CONTINUE ICI… */
-    </style>
+.collection{
+padding:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.price{
+font-size:20px;
+font-weight:bold;
+}
+
+button{
+background:#4ECDC4;
+border:none;
+padding:10px 15px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.cart{
+position:fixed;
+top:20px;
+right:20px;
+background:white;
+padding:10px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
-    <h1>LES POUTCHOU</h1>
-    <p class="subtitle">
-        Les Poutchou ce sont des petits grigris porte-bonheur...
-    </p>
+<h1>LES POUTCHOU</h1>
+<p>Les petits grigris porte-bonheur</p>
 </header>
 
-<div class="cart-icon">
-  🛒 <span id="cart-count">0</span>
+<div class="cart">
+🛒 Panier : <span id="cart-count">0</span>
 </div>
 
-<div class="cart-sidebar">
-  <h2>Panier</h2>
-  <div id="cart-items"></div>
-  <p class="cart-total">Total : <span id="cart-total">0</span>€</p>
-  <button id="checkout-btn" class="btn checkout-btn">Passer au paiement</button>
+<section class="collection">
+
+<h2>Choisissez votre Poutchou</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="assets/images/toudou.jpg">
+<h3>Toudou</h3>
+<p>Chat + Quartz rose</p>
+<p class="price">9€</p>
+<button onclick="addCart('Toudou')">Ajouter</button>
 </div>
 
-<!-- ICI tu continues ton contenu -->
+<div class="card">
+<img src="assets/images/abeillou.jpg">
+<h3>Abeillou</h3>
+<p>Abeille + Pierre de lave</p>
+<p class="price">9€</p>
+<button onclick="addCart('Abeillou')">Ajouter</button>
+</div>
 
+<div class="card">
+<img src="assets/images/luckyou.jpg">
+<h3>Luckyou</h3>
+<p>Grenouille + Aventurine</p>
+<p class="price">9€</p>
+<button onclick="addCart('Luckyou')">Ajouter</button>
+</div>
+
+<div class="card">
+<img src="assets/images/courageou.jpg">
+<h3>Courageou</h3>
+<p>Tigre + Cornaline</p>
+<p class="price">9€</p>
+<button onclick="addCart('Courageou')">Ajouter</button>
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+let cart = 0;
+
+function addCart(name){
+
+cart++;
+
+document.getElementById("cart-count").innerText = cart;
+
+alert(name + " ajouté au panier 🛒");
+
+}
+
+</script>
+
+</body>
+</html>
     <!-- COLLECTION SECTION (THE FUNNEL) -->
     <section id="collection" class="collection">
         <div class="container">
@@ -74,11 +165,6 @@
   <p class="price">9€</p>
    </div>
 </div>
-        
-<div class="card">
-  <img src="assets/images/toudou.jpg" alt="Toudou - Chat + Quartz rose">
-  <h3>Toudou</h3>
-  <p class="desc">Chat + Quartz rose</p>
 
 <div class="card">
   <img src="assets/images/abeillou.jpg" alt="Abeillou - Abeille + Pierre de lave">
