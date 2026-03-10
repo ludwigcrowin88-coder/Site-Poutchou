@@ -536,3 +536,8 @@ button:hover {
   max-height: 220px; /* Ajuste la hauteur de l'image ici */
   border-radius: 10px;
 }
+@media (max-width: 600px) {
+  .product-card img {
+    max-height: 160px;
+  }
+}
