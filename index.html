@@ -254,149 +254,6 @@
   <p class="price">9€</p>
 
 
-                <!-- 2. CALINOU -->
-                <div class="card" onclick="selectProduct('Calinou', 'Le doux, pour les colis fragiles et les câlins.', 'tag-purple')">
-                    <div class="card-img">🧸</div>
-                    <div class="card-body">
-                        <span class="tag tag-purple">Douceur</span>
-                        <h3 class="card-title">Calinou</h3>
-                        <p class="card-story">Calinou est un expert en emballage soyeux. Il garantit que votre colis arrive aussi doux qu'un nuage.</p>
-                    </div>
-                </div>
-
-                <!-- 3. ABEILLOU -->
-                <div class="card" onclick="selectProduct('Abeillou', 'Le rapide, pour les urgences et les livraisons express.', 'tag-green')">
-                    <div class="card-img">🐝</div>
-                    <div class="card-body">
-                        <span class="tag tag-green">Vitesse</span>
-                        <h3 class="card-title">Abeillou</h3>
-                        <p class="card-story">Abeillou ne s'arrête jamais. Il est toujours en mouvement pour vous livrer avant que vous ne le demandiez.</p>
-                    </div>
-                </div>
-
-                <!-- 4. LUCKYOU -->
-                <div class="card" onclick="selectProduct('Luckyou', 'Le chanceux, pour les surprises et les bons plans.', 'tag-red')">
-                    <div class="card-img">🍀</div>
-                    <div class="card-body">
-                        <span class="tag tag-red">Chance</span>
-                        <h3 class="card-title">Luckyou</h3>
-                        <p class="card-story">Luckyou apporte toujours la bonne surprise. Parfois, il glisse un petit cadeau dans votre commande.</p>
-                    </div>
-                </div>
-
-                <!-- 5. BAMBOU -->
-                <div class="card" onclick="selectProduct('Bambou', 'L\'écologique, pour les produits verts et durables.', 'tag-green')">
-                    <div class="card-img">🎋</div>
-                    <div class="card-body">
-                        <span class="tag tag-green">Éco</span>
-                        <h3 class="card-title">Bambou</h3>
-                        <p class="card-story">Bambou est le gardien de la planète. Ses livraisons sont 100% zéro carbone et respectueuses de la nature.</p>
-                    </div>
-                </div>
-
-                <!-- 6. COURAGEOU -->
-                <div class="card" onclick="selectProduct('Courageou', 'Le protecteur, pour les trajets difficiles.', 'tag-blue')">
-                    <div class="card-img">🦁</div>
-                    <div class="card-body">
-                        <span class="tag tag-blue">Bravoure</span>
-                        <h3 class="card-title">Courageou</h3>
-                        <p class="card-story">Courageou affronte la pluie, le vent et le trafic. Votre colis est en sécurité absolue avec lui.</p>
-                    </div>
-                </div>
-
-                <!-- 7. VEILLOU -->
-                <div class="card" onclick="selectProduct('Veillou', 'Le gardien, pour les livraisons de nuit.', 'tag-blue')">
-                    <div class="card-img">🌙</div>
-                    <div class="card-body">
-                        <span class="tag tag-blue">Nuit</span>
-                        <h3 class="card-title">Veillou</h3>
-                        <p class="card-story">Veillou ne dort jamais. Idéal pour les livraisons tardives ou les urgences minuit.</p>
-                    </div>
-                </div>
-
-                <!-- 8. TRANQUILOU -->
-                <div class="card" onclick="selectProduct('Tranquilou', 'Le zen, pour les commandes calmes.', 'tag-purple')">
-                    <div class="card-img">🧘</div>
-                    <div class="card-body">
-                        <span class="tag tag-purple">Zen</span>
-                        <h3 class="card-title">Tranquilou</h3>
-                        <p class="card-story">Tranquilou arrive sans bruit, sans stress. La livraison la plus apaisante de la ville.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ORDER FORM SECTION -->
-    <section class="order-section">
-        <div class="container">
-            <h2>Commandez votre Poutchou</h2>
-            <p class="section-subtitle">Remplissez ce formulaire pour lancer votre tunnel de livraison.</p>
-
-            <div class="form-box">
-                <!-- Display selected product -->
-                <div id="selected-display" class="selected-product-display">
-                    <strong>Vous avez choisi :</strong> <span id="selected-name"></span>
-                    <p id="selected-desc" style="font-size: 0.9rem; margin-top:5px;"></p>
-                </div>
-
-                <form onsubmit="event.preventDefault(); alert('Merci ! Votre Poutchou est en route.');">
-                    <div class="form-group">
-                        <label for="product-select">Sélectionner le Poutchou</label>
-                        <select id="product-select" class="form-control" onchange="updateForm(this.value)">
-                            <option value="">-- Choisissez un Poutchou --</option>
-                            <option value="Toudou">Toudou</option>
-                            <option value="Calinou">Calinou</option>
-                            <option value="Abeillou">Abeillou</option>
-                            <option value="Luckyou">Luckyou</option>
-                            <option value="Bambou">Bambou</option>
-                            <option value="Courageou">Courageou</option>
-                            <option value="Veillou">Veillou</option>
-                            <option value="Tranquilou">Tranquilou</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name">Votre Nom</label>
-                        <input type="text" id="name" class="form-control" placeholder="Jean Dupont" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">Adresse de livraison</label>
-                        <input type="text" id="address" class="form-control" placeholder="123 Rue des Poutchous" required>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Valider la commande</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Poutchou Delivery. Tous droits réservés.</p>
-        </div>
-    </footer>
-
-  'tag
-<header>
-<h1>LES POUTCHOU</h1>
-<p class="subtitle">
-Les Poutchou ce sont des petits grigris porte-bonheur. Ils sont imaginés pour glisser un peu de magie, de douceur et de poésie dans le quotidien, fabriqués à la main.
-</p>
-</header>
-
-<div class="cart-icon">
-  🛒 <span id="cart-count">0</span>
-</div>
-
-<div class="cart-sidebar">
-  <h2>Panier</h2>
-  <div id="cart-items"></div>
-  <p class="cart-total">Total : <span id="cart-total">0</span>€</p>
-  <button id="checkout-btn" class="btn checkout-btn">Passer au paiement</button>
-</div>
-
 <div class="card">
   <img src="assets/images/toudou.jpg" alt="Toudou - Chat + Quartz rose">
   <h3>Toudou</h3>
@@ -607,6 +464,82 @@ Les Poutchou ce sont des petits grigris porte-bonheur. Ils sont imaginés pour g
 </div>
 
   
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORDER FORM SECTION -->
+    <section class="order-section">
+        <div class="container">
+            <h2>Commandez votre Poutchou</h2>
+            <p class="section-subtitle">Remplissez ce formulaire pour lancer votre tunnel de livraison.</p>
+
+            <div class="form-box">
+                <!-- Display selected product -->
+                <div id="selected-display" class="selected-product-display">
+                    <strong>Vous avez choisi :</strong> <span id="selected-name"></span>
+                    <p id="selected-desc" style="font-size: 0.9rem; margin-top:5px;"></p>
+                </div>
+
+                <form onsubmit="event.preventDefault(); alert('Merci ! Votre Poutchou est en route.');">
+                    <div class="form-group">
+                        <label for="product-select">Sélectionner le Poutchou</label>
+                        <select id="product-select" class="form-control" onchange="updateForm(this.value)">
+                            <option value="">-- Choisissez un Poutchou --</option>
+                            <option value="Toudou">Toudou</option>
+                            <option value="Calinou">Calinou</option>
+                            <option value="Abeillou">Abeillou</option>
+                            <option value="Luckyou">Luckyou</option>
+                            <option value="Bambou">Bambou</option>
+                            <option value="Courageou">Courageou</option>
+                            <option value="Veillou">Veillou</option>
+                            <option value="Tranquilou">Tranquilou</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Votre Nom</label>
+                        <input type="text" id="name" class="form-control" placeholder="Jean Dupont" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Adresse de livraison</label>
+                        <input type="text" id="address" class="form-control" placeholder="123 Rue des Poutchous" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Valider la commande</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Poutchou Delivery. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+  'tag
+<header>
+<h1>LES POUTCHOU</h1>
+<p class="subtitle">
+Les Poutchou ce sont des petits grigris porte-bonheur. Ils sont imaginés pour glisser un peu de magie, de douceur et de poésie dans le quotidien, fabriqués à la main.
+</p>
+</header>
+
+<div class="cart-icon">
+  🛒 <span id="cart-count">0</span>
+</div>
+
+<div class="cart-sidebar">
+  <h2>Panier</h2>
+  <div id="cart-items"></div>
+  <p class="cart-total">Total : <span id="cart-total">0</span>€</p>
+  <button id="checkout-btn" class="btn checkout-btn">Passer au paiement</button>
+</div>
+
   
 <div class="card">
 </body>
