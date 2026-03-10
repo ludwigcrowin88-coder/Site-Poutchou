@@ -1,24 +1,381 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Les Poutchou</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poutchou - Livraison & Compagnie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --primary: #FF6B6B; /* Rouge doux moderne */
+            --secondary: #4ECDC4; /* Turquoise */
+            --dark: #292F36;
+            --light: #F7FFF7;
+            --gray: #f4f4f4;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --radius: 12px;
+        }
 
-<link rel="stylesheet" href="style.css">
-  
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* --- UI COMPONENTS --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- HERO SECTION --- */
+        header {
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        header span { color: var(--primary); }
+
+        header p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* --- THE COLLECTION (FUNNEL STEP 1) --- */
+        .collection {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #ccc;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .card-story {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            height: 60px; /* Fixed height for alignment */
+            overflow: hidden;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Tags colors */
+        .tag-red { background: #ffe0e0; color: var(--primary); }
+        .tag-blue { background: #e0f7fa; color: var(--secondary); }
+        .tag-green { background: #e8f5e9; color: #4caf50; }
+        .tag-purple { background: #f3e5f5; color: #9c27b0; }
+
+        /* --- ORDER FORM (FUNNEL STEP 2) --- */
+        .order-section {
+            padding: 80px 0;
+            background-color: var(--gray);
+        }
+
+        .form-box {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .selected-product-display {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            display: none; /* Hidden by default */
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            .form-box { padding: 20px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<nav class="main-nav">
-  <a href="index.html">Accueil</a>
-  <a href="#boutique">Boutique</a>
-  <a href="panier.html">Panier</a>
-  <a href="politique.html">Politique</a>
-</nav>
-  
+    <!-- HERO SECTION -->
+    <header>
+        <div class="container">
+            <h1>Le Poutchou,<br>Votre <span>Compagnon de Livraison</span></h1>
+            <p>Ne choisissez plus un simple livreur. Choisissez un Poutchou qui correspond à votre humeur et à vos besoins.</p>
+            <a href="#collection" class="btn btn-primary">Trouver mon Poutchou</a>
+        </div>
+    </header>
+
+    <!-- COLLECTION SECTION (THE FUNNEL) -->
+    <section id="collection" class="collection">
+        <div class="container">
+            <h2>Choisissez votre Poutchou</h2>
+            <p class="section-subtitle">Chaque Poutchou a une histoire unique et une spécialité. Cliquez sur celui qui vous inspire pour commander.</p>
+            
+            <div class="grid">
+                <!-- 1. TOUDOU -->
+                <div class="card" onclick="selectProduct('Toudou', 'Le robuste, pour les livraisons lourdes et les gros efforts.', 'tag-red')">
+                    <div class="card-img">💪</div>
+                    <div class="card-body">
+                        <span class="tag tag-red">Force</span>
+                        <h3 class="card-title">Toudou</h3>
+                        <p class="card-story">Toudou est le champion de la musculation. Il ne craint ni les cartons lourds, ni les escaliers sans ascenseur.</p>
+                    </div>
+                </div>
+
+                <!-- 2. CALINOU -->
+                <div class="card" onclick="selectProduct('Calinou', 'Le doux, pour les colis fragiles et les câlins.', 'tag-purple')">
+                    <div class="card-img">🧸</div>
+                    <div class="card-body">
+                        <span class="tag tag-purple">Douceur</span>
+                        <h3 class="card-title">Calinou</h3>
+                        <p class="card-story">Calinou est un expert en emballage soyeux. Il garantit que votre colis arrive aussi doux qu'un nuage.</p>
+                    </div>
+                </div>
+
+                <!-- 3. ABEILLOU -->
+                <div class="card" onclick="selectProduct('Abeillou', 'Le rapide, pour les urgences et les livraisons express.', 'tag-green')">
+                    <div class="card-img">🐝</div>
+                    <div class="card-body">
+                        <span class="tag tag-green">Vitesse</span>
+                        <h3 class="card-title">Abeillou</h3>
+                        <p class="card-story">Abeillou ne s'arrête jamais. Il est toujours en mouvement pour vous livrer avant que vous ne le demandiez.</p>
+                    </div>
+                </div>
+
+                <!-- 4. LUCKYOU -->
+                <div class="card" onclick="selectProduct('Luckyou', 'Le chanceux, pour les surprises et les bons plans.', 'tag-red')">
+                    <div class="card-img">🍀</div>
+                    <div class="card-body">
+                        <span class="tag tag-red">Chance</span>
+                        <h3 class="card-title">Luckyou</h3>
+                        <p class="card-story">Luckyou apporte toujours la bonne surprise. Parfois, il glisse un petit cadeau dans votre commande.</p>
+                    </div>
+                </div>
+
+                <!-- 5. BAMBOU -->
+                <div class="card" onclick="selectProduct('Bambou', 'L\'écologique, pour les produits verts et durables.', 'tag-green')">
+                    <div class="card-img">🎋</div>
+                    <div class="card-body">
+                        <span class="tag tag-green">Éco</span>
+                        <h3 class="card-title">Bambou</h3>
+                        <p class="card-story">Bambou est le gardien de la planète. Ses livraisons sont 100% zéro carbone et respectueuses de la nature.</p>
+                    </div>
+                </div>
+
+                <!-- 6. COURAGEOU -->
+                <div class="card" onclick="selectProduct('Courageou', 'Le protecteur, pour les trajets difficiles.', 'tag-blue')">
+                    <div class="card-img">🦁</div>
+                    <div class="card-body">
+                        <span class="tag tag-blue">Bravoure</span>
+                        <h3 class="card-title">Courageou</h3>
+                        <p class="card-story">Courageou affronte la pluie, le vent et le trafic. Votre colis est en sécurité absolue avec lui.</p>
+                    </div>
+                </div>
+
+                <!-- 7. VEILLOU -->
+                <div class="card" onclick="selectProduct('Veillou', 'Le gardien, pour les livraisons de nuit.', 'tag-blue')">
+                    <div class="card-img">🌙</div>
+                    <div class="card-body">
+                        <span class="tag tag-blue">Nuit</span>
+                        <h3 class="card-title">Veillou</h3>
+                        <p class="card-story">Veillou ne dort jamais. Idéal pour les livraisons tardives ou les urgences minuit.</p>
+                    </div>
+                </div>
+
+                <!-- 8. TRANQUILOU -->
+                <div class="card" onclick="selectProduct('Tranquilou', 'Le zen, pour les commandes calmes.', 'tag-purple')">
+                    <div class="card-img">🧘</div>
+                    <div class="card-body">
+                        <span class="tag tag-purple">Zen</span>
+                        <h3 class="card-title">Tranquilou</h3>
+                        <p class="card-story">Tranquilou arrive sans bruit, sans stress. La livraison la plus apaisante de la ville.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORDER FORM SECTION -->
+    <section class="order-section">
+        <div class="container">
+            <h2>Commandez votre Poutchou</h2>
+            <p class="section-subtitle">Remplissez ce formulaire pour lancer votre tunnel de livraison.</p>
+
+            <div class="form-box">
+                <!-- Display selected product -->
+                <div id="selected-display" class="selected-product-display">
+                    <strong>Vous avez choisi :</strong> <span id="selected-name"></span>
+                    <p id="selected-desc" style="font-size: 0.9rem; margin-top:5px;"></p>
+                </div>
+
+                <form onsubmit="event.preventDefault(); alert('Merci ! Votre Poutchou est en route.');">
+                    <div class="form-group">
+                        <label for="product-select">Sélectionner le Poutchou</label>
+                        <select id="product-select" class="form-control" onchange="updateForm(this.value)">
+                            <option value="">-- Choisissez un Poutchou --</option>
+                            <option value="Toudou">Toudou</option>
+                            <option value="Calinou">Calinou</option>
+                            <option value="Abeillou">Abeillou</option>
+                            <option value="Luckyou">Luckyou</option>
+                            <option value="Bambou">Bambou</option>
+                            <option value="Courageou">Courageou</option>
+                            <option value="Veillou">Veillou</option>
+                            <option value="Tranquilou">Tranquilou</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Votre Nom</label>
+                        <input type="text" id="name" class="form-control" placeholder="Jean Dupont" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Adresse de livraison</label>
+                        <input type="text" id="address" class="form-control" placeholder="123 Rue des Poutchous" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Valider la commande</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Poutchou Delivery. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+  'tag
 <header>
 <h1>LES POUTCHOU</h1>
 <p class="subtitle">
