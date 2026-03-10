@@ -1,132 +1,254 @@
-
-<!doctype html>
-<html lang="fr" class="dark">
-  <head>
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les Poutchou</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Poutchou</title>
+
+<link rel="stylesheet" href="style.css">
+  
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1 class="logo">Les Poutchou</h1>
-        <div class="cart-icon" onclick="toggleCart()">🛒</div>
-    </header>
+<nav class="main-nav">
+  <a href="index.html">Accueil</a>
+  <a href="#boutique">Boutique</a>
+  <a href="panier.html">Panier</a>
+  <a href="politique.html">Politique</a>
+</nav>
+  
+<header>
+<h1>LES POUTCHOU</h1>
+<p class="subtitle">
+Les Poutchou ce sont des petits grigris porte-bonheur. Ils sont imaginés pour glisser un peu de magie, de douceur et de poésie dans le quotidien, fabriqués à la main.
+</p>
+</header>
 
-    <!-- INTRO -->
-    <section class="intro">
-        <h2>Les Poutchou</h2>
-        <p>
-            Les Poutchou ce sont des petits grigris porte-bonheur.  
-            Ils sont imaginés pour glisser un peu de magie, de douceur et de poésie dans le quotidien,  
-            fabriqués à la main.
-        </p>
-    </section>
+<div class="cart-icon">
+  🛒 <span id="cart-count">0</span>
+</div>
 
-    <!-- PORTFOLIO -->
-    <section class="portfolio-section">
+<div class="cart-sidebar">
+  <h2>Panier</h2>
+  <div id="cart-items"></div>
+  <p class="cart-total">Total : <span id="cart-total">0</span>€</p>
+  <button id="checkout-btn" class="btn checkout-btn">Passer au paiement</button>
+</div>
 
-        <div class="portfolio-intro">
-            <h2>L’univers des Poutchou</h2>
-            <p>
-                Chaque Poutchou porte une symbolique unique : douceur, courage, chance ou protection.  
-                Ils sont fabriqués à la main avec soin, pour accompagner les moments importants et offrir  
-                un peu de poésie à ceux qui les portent.
-            </p>
-        </div>
+<div class="card">
+  <img src="assets/images/toudou.jpg" alt="Toudou - Chat + Quartz rose">
+  <h3>Toudou</h3>
+  <p class="desc">Chat + Quartz rose</p>
 
-        <div class="portfolio-gallery">
+  <div class="story">
+    <p>Le chat avec sa douceur naturelle et ses câlins réconfortants, nous rappelle l'importance de prendre soin de soi et des autres avec délicatesse.</p>
+    <p>Le quartz rose, pierre de l'amour universel, diffuse une énergie apaisante et bienveillante, qui ouvre le cœur et invite à la tendresse.</p>
+    <p>Ce grigri est là pour t'accompagner chaque jour, comme un petit rappel que la douceur est une force et que l'amour commence toujours par soi.</p>
+    <p>Porte-le ou offre-le comme un geste d'affection et laisse son énergie envelopper ton cœur de chaleur et de tendresse.</p>
+  </div>
 
-            <div class="portfolio-item">
-                <img src="images/toudou.jpg" alt="Toudou">
-                <h3>Toudou</h3>
-                <p>La douceur et la tendresse.</p>
-            </div>
+  <p class="highlight">Entoure toi de tendresse</p>
+  <p class="price">9€</p>
 
-            <div class="portfolio-item">
-                <img src="images/abeillou.jpg" alt="Abeillou">
-                <h3>Abeillou</h3>
-                <p>L’énergie et la joie.</p>
-            </div>
+  <div class="buttons">
+    <button class="btn add-to-cart" 
+            data-name="Toudou" 
+            data-price="9" 
+            data-img="assets/images/toudou.jpg">
+      Ajouter au panier
+    </button>
+  </div>
+</div>
 
-            <div class="portfolio-item">
-                <img src="images/luckyou.jpg" alt="Luckyou">
-                <h3>Luckyou</h3>
-                <p>La chance au quotidien.</p>
-            </div>
+<div class="card">
+  <img src="assets/images/abeillou.jpg" alt="Abeillou - Abeille + Pierre de lave">
+  
+  <h3>Abeillou</h3>
+  <p class="desc">Abeille + Pierre de lave</p>
 
-            <div class="portfolio-item">
-                <img src="images/courageou.jpg" alt="Courageou">
-                <h3>Courageou</h3>
-                <p>La force et la détermination.</p>
-            </div>
+  <div class="story">
+    <p>L'abeille, symbole de persévérance et de coopération, nous rappelle que les plus beaux projets se construisent avec patience et engagement.</p>
+    <p>La pierre de lave, née du cœur de la Terre, apporte ancrage et stabilité. Elle aide à avancer pas à pas, avec constance, tout en restant bien connectée à ses intentions.</p>
+    <p>Ce grigri t'accompagne comme un soutien discret, pour te rappeler que chaque effort compte et que ce que tu nourris avec attention finit toujours par grandir.</p>
+    <p>Porte-le comme un petit rappel quotidien que chaque geste compte et que la persévérance transforme les rêves en réalité.</p>
+  </div>
 
-        </div>
+  <p class="highlight">Ce que tu nourris grandit.</p>
+  <p class="price">9€</p>
 
-    </section>
+  <div class="buttons">
+    <button class="btn add-to-cart" 
+            data-name="Abeillou" 
+            data-price="9" 
+            data-img="assets/images/abeillou.jpg">
+      Ajouter au panier
+    </button>
+  </div>
+</div>
 
-    <!-- PRODUITS -->
-    <section class="products">
-        <h2>Nos Poutchou</h2>
+  <div class="card">
+  <img src="assets/images/luckyou.jpg" alt="Luckyou - Grenouille + Aventurine">
+  
+  <h3>Luckyou</h3>
+  <p class="desc">Grenouille + Aventurine</p>
 
-        <div class="product-grid">
+  <div class="story">
+    <p>La grenouille, symbole de transformation et de renouveau, est depuis longtemps associée à la prospérité et aux petits coups de pouce du destin.</p>
+    <p>L'aventurine verte, pierre de chance et d'opportunités, ouvre la voie aux nouvelles possibilités et attire les énergies positives.</p>
+    <p>Ce grigri t'accompagne comme un talisman, pour te rappeler que chaque jour peut être une belle occasion de saisir ta chance.</p>
+    <p>Ose avancer, faire confiance à la vie et accueillir les opportunités qui se présentent à toi.</p>
+  </div>
 
-            <div class="product-card">
-                <img src="images/toudou.jpg" alt="Toudou">
-                <h3>Toudou</h3>
-                <p>Le Poutchou de la douceur.</p>
-                <span class="price">12€</span>
-                <button onclick="addToCart('Toudou', 12)">Ajouter au panier</button>
-            </div>
+  <p class="highlight">La chance appartient aux audacieux.</p>
+  <p class="price">9€</p>
 
-            <div class="product-card">
-                <img src="images/abeillou.jpg" alt="Abeillou">
-                <h3>Abeillou</h3>
-                <p>Le Poutchou de la joie.</p>
-                <span class="price">12€</span>
-                <button onclick="addToCart('Abeillou', 12)">Ajouter au panier</button>
-            </div>
+  <div class="buttons">
+    <button class="btn add-to-cart" 
+            data-name="Luckyou" 
+            data-price="9" 
+            data-img="assets/images/luckyou.jpg">
+      Ajouter au panier
+    </button>
+  </div>
+</div>
 
-            <div class="product-card">
-                <img src="images/luckyou.jpg" alt="Luckyou">
-                <h3>Luckyou</h3>
-                <p>Le Poutchou de la chance.</p>
-                <span class="price">12€</span>
-                <button onclick="addToCart('Luckyou', 12)">Ajouter au panier</button>
-            </div>
+  <div class="card">
+  <img src="assets/images/courageou.jpg" alt="Courageou - Tigre + Cornaline">
+  
+  <h3>Courageou</h3>
+  <p class="desc">Tigre + Cornaline</p>
 
-            <div class="product-card">
-                <img src="images/courageou.jpg" alt="Courageou">
-                <h3>Courageou</h3>
-                <p>Le Poutchou de la force.</p>
-                <span class="price">12€</span>
-                <button onclick="addToCart('Courageou', 12)">Ajouter au panier</button>
-            </div>
+  <div class="story">
+    <p>Le tigre, avec son assurance naturelle et son pas assuré, incarne la confiance tranquille de celui qui connaît sa valeur. Il ne cherche pas à dominer, mais avance avec dignité et certitude.</p>
+    <p>La cornaline, pierre de vitalité et de motivation, réveille la confiance en soi et aide à dépasser les doutes. Elle encourage à affirmer sa voix, à oser prendre sa place et à se sentir légitime dans ses choix.</p>
+    <p>Ce grigri est ton allié pour te rappeler chaque jour que tu as en toi toutes les ressources nécessaires.</p>
+    <p>Il t'accompagne comme un soutien bienveillant, pour marcher avec confiance sur ton chemin et avancer avec détermination.</p>
+  </div>
 
-        </div>
-    </section>
+  <p class="highlight">Crois en toi !</p>
+  <p class="price">9€</p>
 
-    <!-- PANIER -->
-    <div id="cart-panel" class="cart-panel">
-        <h3>Votre panier</h3>
-        <div id="cart-items"></div>
-        <p>Total : <span id="cart-total">0</span> €</p>
-        <button onclick="goToCheckout()">Passer au paiement</button>
-    </div>
+  <div class="buttons">
+    <button class="btn add-to-cart" 
+            data-name="Courageou" 
+            data-price="9" 
+            data-img="assets/images/courageou.jpg">
+      Ajouter au panier
+    </button>
+  </div>
+</div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© Les Poutchou — Créations artisanales</p>
-    </footer>
+  <div class="card">
+  <img src="assets/images/veillou.jpg" alt="Veillou - Hibou + Œil de tigre">
+  
+  <h3>Veillou</h3>
+  <p class="desc">Hibou + Œil de tigre</p>
 
-    <script src="script.js"></script>
+  <div class="story">
+    <p>Le hibou, veilleur de la nuit, voit dans l'ombre ce que d'autres ignorent. Symbole de vigilance et de clairvoyance, il protège en silence, toujours présent pour guider et prévenir des dangers cachés.</p>
+    <p>L'œil de tigre, pierre de protection par excellence, agit comme un bouclier énergétique qui éloigne les influences négatives. Il renforce l'ancrage et la confiance intérieure, permettant de se sentir stable et en sécurité.</p>
+    <p>Réunis, le hibou et l'œil de tigre forment une double protection : la vision qui éclaire et la force qui défend.</p>
+    <p>Ce grigri est un gardien discret, qui veille sur toi et t'enveloppe d'une énergie rassurante à chaque instant.</p>
+  </div>
 
+  <p class="highlight">Sous l'œil protecteur du hibou et du tigre.</p>
+  <p class="price">9€</p>
+
+  <div class="buttons">
+    <button class="btn add-to-cart" 
+            data-name="Veillou" 
+            data-price="9" 
+            data-img="assets/images/veillou.jpg">
+      Ajouter au panier
+    </button>
+  </div>
+</div>
+
+  <div class="card">
+  <img src="assets/images/calinou.jpg" alt="Calinou - Koala + Améthyste">
+  
+  <h3>Calinou</h3>
+  <p class="desc">Koala + Améthyste</p>
+
+  <div class="story">
+    <p>Le koala, symbole de repos et de tranquillité, nous invite à ralentir et à savourer le calme du moment présent. Il nous rappelle que la paix ne se trouve pas dans le tumulte extérieur, mais dans la sérénité que l'on cultive en soi.</p>
+    <p>L'améthyste, pierre de sagesse et d'apaisement, calme les pensées, favorise le sommeil et aide à relâcher les tensions du quotidien. Elle ouvre l'esprit à la clarté et au recul, pour retrouver un équilibre intérieur durable.</p>
+    <p>Ce grigri est une douce invitation à te recentrer, à respirer profondément et à t'accorder des instants de véritable tranquillité.</p>
+    <p>Garde-le près de toi comme un rappel que la paix est toujours à portée de main, même au cœur des journées les plus agitées.</p>
+  </div>
+
+  <p class="highlight">Retrouve la paix et la sérénité.</p>
+  <p class="price">9€</p>
+
+  <div class="buttons">
+    <button class="btn add-to-cart" 
+            data-name="Calinou" 
+            data-price="9" 
+            data-img="assets/images/calinou.jpg">
+      Ajouter au panier
+    </button>
+  </div>
+</div>
+
+  <div class="card">
+  <img src="assets/images/tranquilou.jpg" alt="Tranquilou - Éléphant + Sodalite">
+  
+  <h3>Tranquilou</h3>
+  <p class="desc">Éléphant + Sodalite</p>
+
+  <div class="story">
+    <p>L'éléphant est depuis toujours un symbole de sagesse, de stabilité et de protection. Par sa présence calme et rassurante, il incarne la force tranquille, celle qui ne vacille pas face aux épreuves et avance avec confiance et constance.</p>
+    <p>La sodalite, pierre d'apaisement mental et de clarté intérieure, aide à calmer les pensées envahissantes, à structurer l'esprit et à renforcer le sentiment de sécurité émotionnelle.</p>
+    <p>Elle favorise une stabilité intérieure durable, particulièrement précieuse lorsque l'on se sent dépassé ou en quête d'équilibre.</p>
+    <p>Ainsi, ce Poutchou est profondément rassurant, pensé comme un soutien au quotidien, une invitation à ralentir, à respirer.</p>
+    <p>À garder près de toi comme un repère, un talisman discret qui t'accompagne et te rappelle que tu peux avancer avec calme, solidité et confiance.</p>
+  </div>
+
+  <p class="highlight">Je me sens stable et en sécurité.</p>
+  <p class="price">9€</p>
+
+  <div class="buttons">
+    <button class="btn add-to-cart" 
+            data-name="Tranquilou" 
+            data-price="9" 
+            data-img="assets/images/tranquilou.jpg">
+      Ajouter au panier
+    </button>
+  </div>
+</div>
+
+  <div class="card">
+  <img src="assets/images/bambou.jpg" alt="Bambou - Panda + Howlite">
+  
+  <h3>Bambou</h3>
+  <p class="desc">Panda + Howlite</p>
+
+  <div class="story">
+    <p>Le Poutchou Panda "BAMBOU" est un grigri pensé comme une invitation à ralentir et à retrouver l'harmonie intérieure.</p>
+    <p>Le panda, symbole de paix et d'équilibre, nous enseigne l'art de vivre dans la douceur et la simplicité. Il incarne le calme, la bienveillance et la capacité à trouver l'équilibre entre les contraires, sans effort ni agitation.</p>
+    <p>Associée à la howlite, pierre d'apaisement et de sérénité, ce Poutchou t'aide à calmer le mental, à relâcher les tensions et à retrouver une clarté intérieure.</p>
+    <p>Le yin et le yang viennent rappeler l'équilibre naturel de la vie : l'harmonie née de l'union des opposés.</p>
+    <p>Ce Poutchou t'accompagne comme un rappel doux et rassurant : la paix se cultive à l'intérieur, un instant après l'autre.</p>
+  </div>
+
+  <p class="highlight">L'équilibre commence en toi.</p>
+  <p class="price">9€</p>
+
+  <div class="buttons">
+    <button class="btn add-to-cart" 
+            data-name="Bambou" 
+            data-price="9" 
+            data-img="assets/images/bambou.jpg">
+      Ajouter au panier
+    </button>
+  </div>
+</div>
+
+  
+  
+<div class="card">
 </body>
 </html>
 
